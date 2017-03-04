@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_friendship
 
   has_many :devices
 
