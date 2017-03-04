@@ -23,7 +23,6 @@ export class TimePipe implements PipeTransform {
         yesterday.setDate( today.getDate()-1 );
 
         if ( isDateTime ) {
-            console.log(time.year + '-' +  time.month + '-' + time.day)
             return time.year + '-' +  time.month + '-' + time.day;
         }
 

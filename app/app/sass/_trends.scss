@@ -1,0 +1,138 @@
+/*---------- trends ----------*/
+.trends {
+  height: calc(100vh - 50px);
+  padding: 15px;
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 30px;
+    color: #585d6b;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    display: block;
+    width: 300px;
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+
+  &__thumbnail {
+    display: block;
+    height: 150px;
+    margin-bottom: 15px;
+    background-color: $main-grey-color;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 15px;
+    color: #8b8b8b;
+
+    &-title {
+      display: block;
+      color: #585d6b;
+      font-size: 20px;
+      line-height: 24px;
+
+      &:hover { text-decoration: underline }
+    }
+
+    p {
+      font-size: 15px;
+      line-height: 18px;
+    }
+  }
+
+  &__views {
+
+  }
+
+  &__friends {
+    font-size: 15px;
+    line-height: 18px;
+
+    dt {
+
+    }
+
+    dd {
+
+    }
+
+    &-item {
+      overflow: hidden;
+      display: inline-block;
+      vertical-align: top;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+
+      img {
+        display: block;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: $phone-landscape) {
+  .trends {
+
+    &__title {
+
+    }
+
+    &__wrap {
+
+    }
+
+    &__item {
+
+    }
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .trends {
+
+    &__title {
+      padding: 0 15px;
+    }
+
+    &__wrap {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+
+    &__item {
+
+    }
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .trends {
+
+    &__item {
+
+    }
+  }
+}
+@media (min-width: $desktop) {
+  .trends {
+
+  }
+}
+/*---------- /trends ---------*/
