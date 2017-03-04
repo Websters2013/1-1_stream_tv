@@ -14,7 +14,8 @@ class Video < ApplicationRecord
       time_end: video.time_end.to_i,
       users: video.users,
       hashtags: Hashtag.serialize_all( video.hashtags ),
-      actors: Actor.serialize_all( video.actors )
+      actors: Actor.serialize_all( video.actors ),
+      thumbnail: video.thumbnail
     }
   end
 

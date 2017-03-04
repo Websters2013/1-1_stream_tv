@@ -352,7 +352,8 @@ videos.each do |video|
                   name: video[ :name ],
                   url: video[ :url ],
                   time_start: DateTime.strptime("#{t1}",'%s'),
-                  time_end: DateTime.strptime("#{t2}",'%s')
+                  time_end: DateTime.strptime("#{t2}",'%s'),
+                  thumbnail: video[ :preview ]
                 } )
 
   vidosik.actors << Actor.where( name: video[ :actors ] )
