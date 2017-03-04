@@ -112,7 +112,7 @@ class AuthChannel < ApplicationCable::Channel
 
     user = User.create( email: user_data[ 'email' ] ) unless user
 
-    user.update( facebook_id: user_data[ 'id' ].to_i )
+    user.update( facebook_id: user_data[ 'id' ] )
 
     device = Device.create( user_id: user.id, provider: 'facebook', uid: user_data[ 'id' ], token: token, last_login: DateTime.now.utc )
 
