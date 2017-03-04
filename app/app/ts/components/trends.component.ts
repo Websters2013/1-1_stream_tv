@@ -42,6 +42,8 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
         this.unsubscribeData();
         this.unsubscribeTrandsChanel();
         delete this.data[ 'trends' ];
+        this.data[ 'changed' ] = true;
+
     }
 
     public ngOnInit():void {
@@ -59,6 +61,7 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
             this.data[ 'trends' ] = data[ 'response' ];
 
+            this.data[ 'changed' ] = true;
         } );
 
         this.trendsSubscription = this.trendsChannelService.subscribed.subscribe( ( data:boolean ) => {
