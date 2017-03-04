@@ -1,0 +1,81 @@
+/*---------- new ----------*/
+.new {
+  padding: 15px;
+
+  &__title {
+    margin-bottom: 15px;
+    font-size: 30px;
+  }
+
+  &__wrap {
+
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  &__thumbnail {
+    display: block;
+    height: 200px;
+    margin-bottom: 15px;
+    background-color: $main-grey-color;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    &-title {
+      display: block;
+      color: #000;
+      font-size: 20px;
+      line-height: 24px;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+@media (min-width: $phone-landscape) {
+  .new {
+
+    &__title {
+      padding: 0 15px;
+    }
+
+    &__wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 50%;
+      padding: 0 15px;
+    }
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .new {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .new {
+
+  }
+}
+@media (min-width: $desktop) {
+  .new {
+
+  }
+}
+/*---------- /new ---------*/
