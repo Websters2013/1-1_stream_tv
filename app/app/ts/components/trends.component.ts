@@ -24,19 +24,20 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
     public leave(e):void {
 
-        console.log("leave", e);
-        
-        console.log(this.elementRef.nativeElement);
-
-        this.className = "leave-top"
+        // console.log("leave", e);
+        //
+        // var rect = this.elementRef.nativeElement.getBoundingClientRect();
+        // console.log(rect.top, rect.right, rect.bottom, rect.left);
+        //
+        // this.className = "leave-top"
 
     }
 
     public enter(e):void {
 
-        console.log("enter", e);
-
-        this.className = "enter-top"
+        // console.log("enter", e);
+        //
+        // this.className = "enter-top"
     }
 
     public ngOnDestroy():void {

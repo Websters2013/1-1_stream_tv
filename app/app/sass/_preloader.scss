@@ -24,8 +24,8 @@
     border: 3px solid #fff !important;
     border-left-color: transparent !important;
     border-right-color: transparent !important;
-    animation: spin .6s infinite linear;
     -webkit-animation: spin .6s infinite linear;
+    animation: spin .6s infinite linear;
   }
   &_hide {
     opacity: 0;
