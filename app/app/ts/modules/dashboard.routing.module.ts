@@ -10,15 +10,15 @@ export const routes: Routes = [
         children: [
             {
                 path: 'new',
-                loadChildren: 'app/js/modules/new.module#NewModule'
+                loadChildren: 'app/js/modules/trends.module#TrendsModule'
             },
             {
                 path: 'friends',
-                loadChildren: 'app/js/modules/friends.module#FriendsModule'
+                loadChildren: 'app/js/modules/trends.module#TrendsModule'
             },
             {
                 path: 'popular',
-                loadChildren: 'app/js/modules/popular.module#PopularModule'
+                loadChildren: 'app/js/modules/trends.module#TrendsModule'
             },
             {
                 path: 'one_plus_one',
