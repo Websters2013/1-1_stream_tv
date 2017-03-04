@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_friendship
 
   has_many :devices
+  has_and_belongs_to_many :videos
 
   def self.serialize( user )
 
