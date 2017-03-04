@@ -5,7 +5,7 @@ class ApplicationRecord < ActiveRecord::Base
 
     rsult = []
 
-    items.each do item
+    items.each do |item|
       rsult << self.serialize( item )
     end
 
