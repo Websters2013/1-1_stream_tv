@@ -6,6 +6,20 @@ class AuthChannel < ApplicationCable::Channel
 
   private
 
+  def add_friends( friends, user )
+
+    friends.each do | friend |
+
+      person = User.find_by( facebook_id: friend.id )
+
+      user.friend_request( person )
+
+      person.accept_request( user )
+
+    end
+
+  end
+
   def get_facebook_access_token( code )
 
     access_token = ''
@@ -87,15 +101,18 @@ class AuthChannel < ApplicationCable::Channel
     graph = Koala::Facebook::API.new( token )
 
     user_data = graph.get_object( :me, { fields: [ :email ] } )
-    friends = graph.get_connections('me', 'friends', api_version: 'v2.0')
 
-    p friends
+    friends = graph.get_connections('me', 'friends')
 
     user = User.find_by( email: user_data[ 'email' ] )
 
     user = User.create( email: user_data[ 'email' ] ) unless user
 
+    user.update( facebook_id: user_data[ 'id' ] )
+
     device = Device.create( user_id: user.id, provider: 'facebook', uid: user_data[ 'id' ], token: token, last_login: DateTime.now.utc )
+
+    add_friends( friends, user )
 
     ActionCable.server.broadcast "auth_#{ uuid }", {
         token: device.auth_token
