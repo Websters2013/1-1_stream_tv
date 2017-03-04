@@ -12,6 +12,10 @@ export const routes: Routes = [
         loadChildren: 'app/js/modules/dashboard.module#DashboardModule'
     },
     {
+        path: 'online',
+        loadChildren: 'app/js/modules/dashboard.module#DashboardModule'
+    },
+    {
         path: 'auth',
         loadChildren: 'app/js/modules/auth.module#AuthModule'
     },

@@ -11,6 +11,22 @@ export const routes: Routes = [
             {
                 path: 'new',
                 loadChildren: 'app/js/modules/new.module#NewModule'
+            },
+            {
+                path: 'friends',
+                loadChildren: 'app/js/modules/friends.module#FriendsModule'
+            },
+            {
+                path: 'popular',
+                loadChildren: 'app/js/modules/popular.module#PopularModule'
+            },
+            {
+                path: 'one_plus_one',
+                loadChildren: 'app/js/modules/channel.module#ChannelModule'
+            },
+            {
+                path: 'two_plus_two',
+                loadChildren: 'app/js/modules/channel.module#ChannelModule'
             }
         ]
     }
