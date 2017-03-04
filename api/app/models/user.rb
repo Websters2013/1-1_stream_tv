@@ -3,6 +3,19 @@ class User < ApplicationRecord
 
   has_many :devices
 
+  def self.serialize( user )
+
+    {
+        id: user.id,
+        email: user.email,
+        first_name: user.first_name,
+        last_name: user.last_name,
+        image: user.image,
+        facebook_id: user.facebook_id
+    }
+
+  end
+
   private
 
     def send_to_me_channel

@@ -23,11 +23,12 @@ class MeChannel < ApplicationCable::Channel
   end
 
 
-  def start_data
-    # ActionCable.server.broadcast "me_#{ current_user.id }", {
-    #     message_type: 'start_data',
-    #     response: User.get_me( current_user )
-    # }
+  def me_data
+
+    ActionCable.server.broadcast "me_#{ current_user.id }", {
+        message_type: 'me_data',
+        response: User.serialize( current_user )
+    }
 
   end
 
