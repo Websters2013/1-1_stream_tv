@@ -74,6 +74,9 @@
     height: 100vh;
 
     &__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: absolute;
       top: 0;
       left: 0;
@@ -83,7 +86,7 @@
 
       svg {
         @include absoluteCenter();
-        width: 51px;
+        width: 60%;
         height: auto;
 
         path {
