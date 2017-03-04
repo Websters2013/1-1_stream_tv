@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170304143821) do
     t.string   "image"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "facebook_id"
+    t.string   "facebook_id"
   end
 
   create_table "videos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4" do |t|
