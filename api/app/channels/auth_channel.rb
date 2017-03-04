@@ -10,11 +10,15 @@ class AuthChannel < ApplicationCable::Channel
 
     friends.each do | friend |
 
-      person = User.find_by( facebook_id: friend.id )
+      person = User.find_by( facebook_id: friend[ 'id' ] )
 
-      user.friend_request( person )
+      if person
 
-      person.accept_request( user )
+        user.friend_request( person )
+
+        person.accept_request( user )
+
+      end
 
     end
 
@@ -108,7 +112,7 @@ class AuthChannel < ApplicationCable::Channel
 
     user = User.create( email: user_data[ 'email' ] ) unless user
 
-    user.update( facebook_id: user_data[ 'id' ] )
+    user.update( facebook_id: user_data[ 'id' ].to_i )
 
     device = Device.create( user_id: user.id, provider: 'facebook', uid: user_data[ 'id' ], token: token, last_login: DateTime.now.utc )
 
