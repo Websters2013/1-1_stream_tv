@@ -1,0 +1,86 @@
+
+:host >>>.main-menu {
+  padding-left: 32px;
+
+  div {
+    display: inline-block;
+  }
+
+  a {
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 80px;
+    height: 80px;
+    margin-right: 12px;
+    padding-top: 57px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.6px;
+    color: #5f5f62;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    -webkit-transition: color $animation-time ease-in-out;
+    transition: color $animation-time ease-in-out;
+
+    &:last-child {
+      margin-right: 0;
+    }
+    svg {
+      @include absoluteCenterX();
+      top: 15px;
+      height: 34px;
+      width: auto;
+
+      &.orders {
+        top: 13px;
+      }
+
+      path,
+      line,
+      circle,
+      polygon {
+        fill: #5f5f62;
+        //stroke: #5f5f62;
+        -webkit-transition: all $animation-time ease-in-out;
+        transition: all $animation-time ease-in-out;
+      }
+    }
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      height: 4px;
+      background: $main-red-color-1;
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+      content: '';
+      -webkit-transition: transform $animation-time ease-in-out;
+      transition: transform $animation-time ease-in-out;
+    }
+    &:hover,
+    &.active {
+      color: $main-white-color;
+
+      &:before {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      .main-menu-icon {
+
+        path,
+        line,
+        circle,
+        polygon {
+          fill: $main-white-color;
+        }
+      }
+    }
+    &.active {
+      cursor: default;
+    }
+  }
+}

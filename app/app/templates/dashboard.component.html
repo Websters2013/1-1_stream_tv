@@ -1,0 +1,38 @@
+<div class="dashboard">
+
+    <div class="dashboard__head">
+
+        <h1 class="dashboard__logo" *ngIf="data[ 'view' ]">
+            <svg  x="0px" y="0px" viewBox="0 0 302 302">
+                <style type="text/css">
+                    .st0{fill:#5C89C7 ;}
+                </style>
+                <path class="st0" d="M151,45c58.4,0,106,47.6,106,106s-47.6,106-106,106S45,209.4,45,151S92.6,45,151,45 M151,0C67.6,0,0,67.6,0,151c0,83.4,67.6,151,151,151c83.4,0,151-67.6,151-151C302,67.6,234.4,0,151,0L151,0z"/>
+            </svg>
+        </h1>
+
+        <main-menu [data]="data" *ngIf="data[ 'view' ]"></main-menu>
+
+        <mobile-menu [data]="data" *ngIf="!data[ 'view' ]"></mobile-menu>
+
+        <user-panel [data]="data" (dashboardLogout)="dashboardLogout( $event )"></user-panel>
+
+    </div>
+
+    <aside class="dashboard__aside" *ngIf="data[ 'view' ]" perfectScroll>
+
+        <sub-menu [data]="data"></sub-menu>
+
+    </aside>
+
+    <div class="dashboard__content">
+
+        <div class="dashboard__preloader" *ngIf="loading">
+            <div class="dashboard__preloader-inner"></div>
+        </div>
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+.btn {
+  padding: 0;
+  border: none;
+  background: #ed1b24;
+  font-size: 18px;
+  line-height: 40px;
+  color: #fff;
+  @include main-font1();
+}
+//@media (min-width: $phone-landscape) {
+//
+//}
+//@media (min-width: $tablet-portrait) {
+//
+//}
+//@media (min-width: $tablet-landscape) {
+//
+//}
+//@media (min-width: $desktop) {
+//
+//}
+

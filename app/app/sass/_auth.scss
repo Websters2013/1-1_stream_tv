@@ -1,0 +1,70 @@
+.login {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 550px;
+  height: 100vh;
+  background: #2d2d2f;
+
+  .logo {
+    margin: 0 auto 50px;
+    text-align: center;
+
+    svg {
+      width: 80px;
+      height: 86px;
+    }
+
+    p {
+      padding-top: 10px;
+      font-size: 18px;
+      font-weight: 200;
+      color: $main-white-color;
+      letter-spacing: 1.2px;
+    }
+
+  }
+
+  &__wrap {
+    text-align: center;
+  }
+
+  &__with-social {
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      color: #888;
+      letter-spacing: 0.9px;
+    }
+
+    a {
+      vertical-align: middle;
+      display: inline-block;
+      width: 50px;
+      margin: 0 7px;
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
+
+    }
+
+  }
+
+}
+@media (min-width: $phone-landscape) {
+
+}
+@media (min-width: $tablet-portrait) {
+
+}
+@media (min-width: $tablet-landscape) {
+
+}
+@media (min-width: $desktop) {
+
+}
+

@@ -1,0 +1,11 @@
+<nav class="main-menu">
+
+    <a routerLink="{{ item.url }}" *ngFor="let item of content"
+       [class.active]="data[ 'active_menu' ] == item.url">
+
+        <i [innerHTML]="item.icon"></i>
+        {{ item.text }}
+
+    </a>
+
+</nav>

@@ -1,0 +1,9 @@
+<router-outlet></router-outlet>
+
+<div class="preloader"
+     *ngIf="data[ 'preloader' ][ 'visible' ]"
+     [@preloaderAnimation]="data[ 'preloader' ][ 'visible' ]">
+
+    <div class="preloader__inner"></div>
+
+</div>

@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Dashboard_Front</title>
+
+    <base href="/">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" type="text/css" href="app/css/vendors/perfect-scrollbar.min.css">
+    <link rel="stylesheet" href="app/css/index.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+
+    <script>
+        delete Hammer.defaults.cssProps.userSelect;
+    </script>
+
+    <script type="text/javascript" src="app/js/vendors/perfect-scrollbar.js"></script>
+
+    <!-- 1. Load libraries -->
+
+    <!-- IE required polyfills, in this exact order -->
+    <script src="app/js/vendors/shim.min.js"></script>
+
+    <script src="app/js/vendors/zone.js"></script>
+    <script src="app/js/vendors/Reflect.js"></script>
+    <script src="app/js/vendors/system.src.js"></script>
+
+
+    <script src="app/js/vendors/system.config.js"></script>
+    <script>
+        System.import('app').catch(function(err){ console.error(err); });
+    </script>
+</head>
+<body>
+
+<!--site-->
+<div class="site">
+
+    <app>
+        <div class="preloader">
+            <div class="preloader__inner"></div>
+        </div>
+    </app>
+
+</div>
+<!--/site-->
+
+</body>
+</html>

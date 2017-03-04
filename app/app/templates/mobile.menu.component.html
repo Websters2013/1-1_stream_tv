@@ -1,0 +1,94 @@
+
+
+<nav class="mobile-menu" [class.active]="data[ 'popups' ][ 'mobile_main_menu' ]">
+
+    <!--mobile-menu-btn-->
+    <button (click)="showMenu()" class="mobile-menu__btn">
+        <span></span>
+    </button>
+    <!--/mobile-menu-btn-->
+
+    <!--mobile-menu__wrap-->
+    <div class="mobile-menu__wrap" [@menuVisibleChange]="data[ 'popups' ][ 'mobile_main_menu' ]"
+                                   *ngIf="data[ 'popups' ][ 'mobile_main_menu' ]"
+                                   (swipeleft)="swipe( $event.type )">
+
+        <!--mobile-menu__user-->
+        <div class="mobile-menu__user">
+
+            <!--mobile-menu__avatar-->
+            <div class="mobile-menu__avatar" style="background-image: url('app/pic/user-avatar.png')"></div>
+            <!--/mobile-menu__avatar-->
+
+            <!--mobile-menu__name-->
+            <div class="mobile-menu__name">Boychuk Andrey</div>
+            <!--/mobile-menu__name-->
+
+        </div>
+        <!--/mobile-menu__user-->
+
+        <!--mobile-menu__main-->
+        <div class="mobile-menu__main" [class.active]="data[ 'popups' ][ 'mobile_sub_menu' ]">
+
+            <nav *ngFor="let item of content"
+                 (swipeleft)="swipe( $event.type )">
+
+                <!--mobile-menu__item-->
+                <div class="mobile-menu__item">
+
+                    <a (click)="showSubMenu( item )" routerLink="{{ item.url }}"
+                       [class.active]="data[ 'active_menu' ] == item.url">
+
+                        <i [innerHTML]="item.icon"></i>
+                        {{ item.text }}
+                    </a>
+
+                </div>
+                <!--/mobile-menu__item-->
+
+            </nav>
+
+        </div>
+        <!--/mobile-menu__main-->
+
+        <!--mobile-menu__sub-->
+        <div class="mobile-menu__sub" [@subMenuVisibleChange]="data[ 'popups' ][ 'mobile_sub_menu' ]"
+                                      *ngIf="data[ 'popups' ][ 'mobile_sub_menu' ]">
+
+            <button (click)="hideSubMenu()">{{ subMenuTitle }}</button>
+
+            <nav (swipeleft)="swipe( $event.type )">
+
+                <!--mobile-menu__item-->
+                <div class="mobile-menu__item" *ngFor="let item of subMenuItems[ data[ 'active_menu' ].substr( 1 ).split( '/' )[ 1 ] ]">
+
+                    <a routerLink="{{ item.url }}"
+                       [class.active]="data[ 'active_sub_menu' ] == item.url"
+                       (click)="closeMenu()">
+
+                        <i [innerHTML]="item.icon"></i>
+                        {{ item.text }}
+
+                    </a>
+
+                    <a routerLink="{{ item.url }}"
+                       [class.active]="data[ 'active_sub_menu' ] == item.url">
+
+                        <i [innerHTML]="item.icon"></i>
+                        {{ item.text }}
+
+                    </a>
+
+                </div>
+                <!--/mobile-menu__item-->
+
+            </nav>
+
+        </div>
+        <!--/mobile-menu__sub-->
+
+    </div>
+    <!--/mobile-menu__wrap-->
+
+
+</nav>

@@ -1,0 +1,14 @@
+.idea/
+.DS_Store
+
+app/node_modules/
+app/dist/
+app/npm-debug.log
+
+api/.bundle
+api/config/database.yml
+api/log/*
+api/tmp/*
+!api/log/.keep
+!api/tmp/.keep
+api/public/*
