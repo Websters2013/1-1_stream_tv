@@ -20,30 +20,11 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
     constructor(
         protected dataBindingService:DataBindingService,
         private router:Router,
-        private trendsChannelService:TrendsChannelService,
-        private elementRef: ElementRef
+        private trendsChannelService:TrendsChannelService
     ){
 
         super( dataBindingService );
 
-    }
-
-    public leave( e:Event ):void {
-
-        // console.log("leave", e);
-        //
-        // var rect = this.elementRef.nativeElement.getBoundingClientRect();
-        // console.log(rect.top, rect.right, rect.bottom, rect.left);
-        //
-        // this.className = "leave-top"
-
-    }
-
-    public enter( e:Event ):void {
-
-        // console.log("enter", e);
-        //
-        // this.className = "enter-top"
     }
 
     public ngOnDestroy():void {

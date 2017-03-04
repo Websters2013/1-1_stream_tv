@@ -9,141 +9,50 @@
   > div {
     display: inline-block;
     vertical-align: top;
-    margin-left: 18px;
+  }
 
-    &:first-child {
-      margin-left: 0;
+  &__avatar {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    div {
+      @include absolutePosition();
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
+    }
+
+    img {
+      @include absolutePosition();
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-position: center;
+      background-size: cover;
     }
   }
+
   &__settings {
     position: relative;
     height: 50px;
-    padding-right: 7px;
   }
+
   &__settings-menu {
-    overflow: hidden;
-    position: absolute;
-    z-index: 2;
-    right: 0;
-    top: 100%;
-    width: 270px;
-    border-radius: 0 0 4px 4px;
-    background: $main-red-color-2;
 
     a {
-      position: relative;
       display: block;
-      padding: 19px 0 16px;
-      font-size: 15px;
-      font-weight: 300;
-      letter-spacing: 0.5px;
-      color: $main-white-color;
-      -webkit-transition: background $animation-time ease-in-out;
-      transition: background $animation-time ease-in-out;
+      width: 55px;
 
-      &:before {
-        opacity: 1;
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: #f45057;
-        content: '';
-        -webkit-transition: opacity $animation-time ease-in-out;
-        transition: opacity $animation-time ease-in-out;
-      }
       > i {
-        position: relative;
-        display: inline-block;
-        vertical-align: middle;
-        width: 66px;
+        display: block;
+        height: 50px;
       }
     }
   }
-  &__settings-btn {
-    position: relative;
-    width: 20px;
-    height: 100%;
-    padding: 0;
-    border: none;
-    background: transparent;
 
-    span {
-      @include absoluteCenter();
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      border: 2px solid $main-white-color;
-      background: transparent;
-      -webkit-transition: all $animation-time ease-in-out;
-      transition: all $animation-time ease-in-out;
-
-      &:before,
-      &:after {
-        position: absolute;
-        left: -2px;
-        width: 4px;
-        border-radius: 3px;
-        border: 2px solid $main-white-color;
-        background: transparent;
-        box-sizing: border-box;
-        content: '';
-        -webkit-transition: all $animation-time ease-in-out;
-        transition: all $animation-time ease-in-out;
-      }
-      &:before {
-        top: -9px;
-        bottom: 5px;
-        animation: btn-anim-close-1 $animation-time forwards linear;
-      }
-      &:after {
-        top: 5px;
-        bottom: -9px;
-        animation: btn-anim-close-2 $animation-time forwards linear;
-      }
-    }
-    &.active {
-
-      span {
-        border-color: transparent;
-        background: transparent;
-
-        &:before {
-          border-color: $main-white-color;
-          background: $main-white-color;
-          animation: btn-anim-open-1 $animation-time forwards linear;
-        }
-        &:after {
-          border-color: $main-white-color;
-          background: $main-white-color;
-          animation: btn-anim-open-2 $animation-time forwards linear;
-        }
-      }
-      svg {
-        animation: fade-in $animation-time forwards linear;
-
-        path {
-          fill: $main-white-color;
-        }
-      }
-    }
-
-    svg {
-      opacity: 0;
-      @include absoluteCenter();
-      width: 18px;
-      height: 18px;
-      animation: fade-out $animation-time forwards linear;
-
-      path {
-        fill: $main-white-color;
-        -webkit-transition: fill $animation-time ease-in-out;
-        transition: fill $animation-time ease-in-out;
-      }
-    }
-  }
   &__notification {
     position: relative;
 
@@ -183,114 +92,6 @@
   }
 }
 
-@keyframes btn-anim-open-1 {
-
-  0%{
-    bottom: 5px;
-  }
-  50% {
-    bottom: -9px;
-    top: -9px;
-  }
-  99%{
-    opacity: 1;
-    transform: rotate(45deg);
-    top: -11px;
-    bottom: -11px;
-  }
-  100%{
-    opacity: 0;
-    transform: rotate(45deg);
-    top: -11px;
-    bottom: -11px;
-  }
-}
-@keyframes btn-anim-open-2 {
-
-  0%{
-    bottom: -9px;
-    top: 5px;
-  }
-  50% {
-    top: -9px;
-    bottom: -9px;
-  }
-  99%{
-    opacity: 1;
-    transform: rotate(-45deg);
-    top: -11px;
-    bottom: -11px;
-  }
-  100%{
-    opacity: 0;
-    transform: rotate(-45deg);
-    top: -11px;
-    bottom: -11px;
-  }
-}
-@keyframes btn-anim-close-1 {
-
-  0%{
-    bottom: -9px;
-    transform: rotate(45deg);
-  }
-  1% {
-    opacity: 1;
-  }
-  50% {
-    bottom: -9px;
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(0);
-    bottom: 5px;
-  }
-}
-@keyframes btn-anim-close-2 {
-
-  0%{
-    top: -9px;
-    transform: rotate(-45deg);
-  }
-  1% {
-    opacity: 1;
-  }
-  50% {
-    top: -9px;
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(0);
-    top: 5px;
-  }
-}
-@keyframes fade-in {
-
-  0%{
-    opacity: 0;
-  }
-  99%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  }
-
-}
-@keyframes fade-out {
-
-  0%{
-    opacity: 1;
-  }
-  1%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 0;
-  }
-
-}
-
 @media (min-width: $phone-landscape) {
 
 
@@ -298,241 +99,20 @@
 @media (min-width: $tablet-portrait) {
 
   .user-panel {
-    right: 30px;
-    padding-right: 12px;
 
-    > div {
-      margin-left: 41px;
-    }
     &__settings {
       position: relative;
       height: 80px;
     }
     &__settings-menu {
-      right: -42px;
-      width: 417px;
-      border-radius: 0 0 5px 5px;
-      background: $main-grey-color;
-      box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.26);
 
-      a {
-        padding: 19px 0 17px 28px;
-        font-size: 18px;
-
-        &:before {
-          background: $main-red-color-2;
-        }
-        &:hover {
-          background: $main-red-color-2;
-
-          &:before {
-            opacity: 0;
-          }
-        }
-        > i {
-          position: relative;
-          display: inline-block;
-          vertical-align: middle;
-          width: 67px;
-        }
-      }
     }
-    &__settings-btn {
-      width: 33px;
 
-      span {
-        width: 6px;
-        height: 6px;
-
-        &:before,
-        &:after {
-          left: -2px;
-          width: 6px;
-          border-radius: 3px;
-        }
-        &:before {
-          top: -13px;
-          bottom: 9px;
-        }
-        &:after {
-          top: 9px;
-          bottom: -13px;
-        }
-      }
-      &:hover {
-
-        span {
-          border-color: $main-red-color-1;
-
-          &:before,
-          &:after {
-            border-color: $main-red-color-1;
-
-          }
-        }
-      }
-      &.active {
-
-        span {
-
-          &:before {
-            border-color: $main-red-color-1;
-            background: $main-red-color-1;
-          }
-          &:after {
-            border-color: $main-red-color-1;
-            background: $main-red-color-1;
-          }
-        }
-
-        &:hover {
-
-          span {
-            border-color: transparent;
-          }
-
-          svg {
-
-            path {
-              fill: $main-red-color-1;
-            }
-          }
-        }
-      }
-
-      svg {
-        width: 32px;
-        height: 32px;
-
-        path {
-          fill: $main-red-color-1;
-        }
-      }
-    }
-    &__notification {
-      margin-left: 49px;
-
-      svg {
-        width: 34px;
-      }
-      span {
-        top: 3px;
-        right: -5px;
-        width: 17px;
-        height: 17px;
-        padding: 3px 7px;
-        background: $main-red-color-1;
-        font-size: 12px;
-        color: $main-white-color;
-      }
-    }
     &__avatar {
-      position: relative;
       width: 61px;
       height: 61px;
-
-      div {
-        @include absolutePosition();
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-position: center;
-        background-size: cover;
-      }
-
-      img {
-        @include absolutePosition();
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background-position: center;
-        background-size: cover;
-      }
     }
   }
-
-  @keyframes btn-anim-open-1 {
-
-    0%{
-      bottom: 9px;
-    }
-    50% {
-      bottom: -13px;
-      top: -13px;
-    }
-    99%{
-      opacity: 1;
-      transform: rotate(45deg);
-      top: -20px;
-      bottom: -20px;
-    }
-    100%{
-      opacity: 0;
-      transform: rotate(45deg);
-      top: -20px;
-      bottom: -20px;
-    }
-  }
-  @keyframes btn-anim-open-2 {
-
-    0%{
-      bottom: -13px;
-      top: 9px;
-    }
-    50% {
-      top: -13px;
-      bottom: -13px;
-    }
-    99%{
-      opacity: 1;
-      transform: rotate(-45deg);
-      top: -20px;
-      bottom: -20px;
-    }
-    100%{
-      opacity: 0;
-      transform: rotate(-45deg);
-      top: -20px;
-      bottom: -20px;
-    }
-  }
-  @keyframes btn-anim-close-1 {
-
-    0%{
-      bottom: -13px;
-      transform: rotate(45deg);
-    }
-    1% {
-      opacity: 1;
-    }
-    50% {
-      bottom: -13px;
-      transform: rotate(0);
-    }
-    100%{
-      transform: rotate(0);
-      bottom: 9px;
-    }
-  }
-  @keyframes btn-anim-close-2 {
-
-    0%{
-      top: -13px;
-      transform: rotate(-45deg);
-    }
-    1% {
-      opacity: 1;
-    }
-    50% {
-      top: -13px;
-      transform: rotate(0);
-    }
-    100%{
-      transform: rotate(0);
-      top: 9px;
-    }
-  }
-
 }
 @media (min-width: $tablet-landscape) {
 
