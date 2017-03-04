@@ -13,6 +13,7 @@ import {Subscription} from "rxjs";
 export class TrendsComponent extends SynchronizeComponent implements OnDestroy, OnInit{
 
     public className: string;
+    public title:string;
     private trendsSubscribed:boolean = false;
     private trendsDataSubscription: Subscription;
     private trendsSubscription: Subscription;
@@ -20,35 +21,27 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
     constructor(
         protected dataBindingService:DataBindingService,
         private router:Router,
-        private trendsChannelService:TrendsChannelService,
-        private elementRef: ElementRef
+        private trendsChannelService:TrendsChannelService
     ){
 
         super( dataBindingService );
-
-    }
-
-    public leave( e:Event ):void {
-
-        console.log("leave", e);
         
-        console.log(this.elementRef.nativeElement);
+        if( router.url.indexOf( 'new' ) >= 0 ) {
+            this.title = 'Новинки';
+        }
+        if( router.url.indexOf( 'popular' ) >= 0 ) {
+            this.title = 'Популярное';
+        }
+        if( router.url.indexOf( 'friends' ) >= 0 ) {
+            this.title = 'Друзья просмотрели';
+        }
 
-        this.className = "leave-top"
-
-    }
-
-    public enter( e:Event ):void {
-
-        console.log("enter", e);
-
-        this.className = "enter-top"
     }
 
     public ngOnDestroy():void {
         this.unsubscribeData();
-
-        console.log(200);
+        this.unsubscribeTrandsChanel();
+        delete this.data[ 'trends' ];
     }
 
     public ngOnInit():void {
@@ -56,10 +49,11 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
         this.subscribeTrandsChanel();
 
+        this.trendsChannelService.start();
+
     }
 
     private subscribeTrandsChanel():void{
-        let self = this;
 
         this.trendsDataSubscription = this.trendsChannelService.observableData.subscribe( ( data:Object ) => {
 
@@ -96,6 +90,9 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
             this.trendsSubscription.unsubscribe();
 
         }
+
+        this.trendsChannelService.unsubscribe();
+        this.trendsSubscribed = false;
 
     }
 

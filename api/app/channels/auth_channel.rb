@@ -106,10 +106,6 @@ class AuthChannel < ApplicationCable::Channel
 
     user_data = graph.get_object( :me, { fields: [ :email ] } )
 
-    p user_data
-
-    p 333
-
     friends = graph.get_connections('me', 'friends')
 
     user = User.find_by( email: user_data[ 'email' ] )
