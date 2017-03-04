@@ -8,11 +8,15 @@
   }
 
   &__wrap {
-
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
   }
 
   &__item {
     display: block;
+    width: 300px;
     margin-bottom: 30px;
   }
 
@@ -53,24 +57,29 @@
     }
 
     &__wrap {
-      display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: flex-start;
     }
 
     &__item {
-      width: 50%;
-      padding: 0 15px;
+
     }
   }
 }
 @media (min-width: $tablet-portrait) {
   .new {
 
+    &__item {
+
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
   .new {
 
+    &__item {
+
+    }
   }
 }
 @media (min-width: $desktop) {
