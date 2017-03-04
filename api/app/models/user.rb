@@ -3,13 +3,8 @@ class User < ApplicationRecord
 
   has_many :devices
 
+
   private
-
-    def gen_password
-
-      Passgen::generate
-
-    end
 
     def send_to_me_channel
 
