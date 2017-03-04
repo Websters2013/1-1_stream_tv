@@ -1,5 +1,6 @@
 /*---------- new ----------*/
 .new {
+  height: calc(100vh - 50px);
   padding: 15px;
 
   &__title {
@@ -17,6 +18,7 @@
   &__item {
     display: block;
     width: 300px;
+    padding: 0 15px;
     margin-bottom: 30px;
   }
 
@@ -53,12 +55,11 @@
   .new {
 
     &__title {
-      padding: 0 15px;
+
     }
 
     &__wrap {
-      flex-direction: row;
-      align-items: flex-start;
+
     }
 
     &__item {
@@ -68,6 +69,15 @@
 }
 @media (min-width: $tablet-portrait) {
   .new {
+
+    &__title {
+      padding: 0 15px;
+    }
+
+    &__wrap {
+      flex-direction: row;
+      align-items: flex-start;
+    }
 
     &__item {
 
