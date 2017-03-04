@@ -1,14 +1,12 @@
 <nav class="sub-menu" *ngIf="data[ 'active_menu' ] != ''">
 
-    <div *ngFor="let item of content[ data[ 'active_menu' ].substr( 1 ).split( '/' )[ 1 ] ]">
-        <a *ngIf="hasRights( item )"
-           routerLink="{{ item.url }}"
-           [class.active]="data[ 'active_sub_menu' ] == item.url">
+    <a *ngFor="let item of content[ data[ 'active_menu' ].substr( 1 ).split( '/' )[ 0 ] ]"
+       routerLink="{{ item.url }}"
+       [class.active]="data[ 'active_sub_menu' ] == item.url">
 
-            <i [innerHTML]="item.icon"></i>
-            {{ item.text }}
+        <i [innerHTML]="item.icon"></i>
+        {{ item.text }}
 
-        </a>
-    </div>
+    </a>
 
 </nav>
