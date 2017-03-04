@@ -10,9 +10,6 @@ import { SubMenuComponent }         from "../components/sub.menu.component";
 import { MobileMenuComponent }      from "../components/mobile.menu.component";
 
 import { MeChannelService }         from "../services/me.channel.service";
-// import { PermissionsService }       from "../services/permissions.service";
-// import { UsersService }             from "../services/users.service";
-// import { WebSocketService }         from "../services/websocket.service";
 
 import { InnerHtmlDirective }       from "../directives/innerhtml.directive";
 
@@ -32,10 +29,7 @@ import { InnerHtmlDirective }       from "../directives/innerhtml.directive";
         InnerHtmlDirective
     ],
     providers: [
-        MeChannelService,
-        // PermissionsService,
-        // UsersService,
-        // WebSocketService
+        MeChannelService
     ]
 })
 export class DashboardModule {

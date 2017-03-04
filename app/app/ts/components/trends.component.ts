@@ -2,6 +2,8 @@ import {Component, OnDestroy, OnInit, ElementRef} from '@angular/core';
 import { SynchronizeComponent } from "./synchronize.component";
 import { DataBindingService } from "../services/data.binding.service";
 import {Router} from "@angular/router";
+import {TrendsChannelService} from "../services/trends.channel.service";
+import {Subscription} from "rxjs";
 
 @Component({
     selector: 'trends',
@@ -11,10 +13,14 @@ import {Router} from "@angular/router";
 export class TrendsComponent extends SynchronizeComponent implements OnDestroy, OnInit{
 
     public className: string;
+    private trendsSubscribed:boolean = false;
+    private trendsDataSubscription: Subscription;
+    private trendsSubscription: Subscription;
 
     constructor(
         protected dataBindingService:DataBindingService,
         private router:Router,
+        private trendsChannelService:TrendsChannelService,
         private elementRef: ElementRef
     ){
 
@@ -22,7 +28,7 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
     }
 
-    public leave(e):void {
+    public leave( e:Event ):void {
 
         // console.log("leave", e);
         //
@@ -33,7 +39,7 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
     }
 
-    public enter(e):void {
+    public enter( e:Event ):void {
 
         // console.log("enter", e);
         //
@@ -49,7 +55,48 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
     public ngOnInit():void {
         this.updateData( this.dataBindingService.getData() );
 
-        console.log(100);
+        this.subscribeTrandsChanel();
+
+    }
+
+    private subscribeTrandsChanel():void{
+        let self = this;
+
+        this.trendsDataSubscription = this.trendsChannelService.observableData.subscribe( ( data:Object ) => {
+
+            this.data[ 'trends' ] = data[ 'response' ];
+
+        } );
+
+        this.trendsSubscription = this.trendsChannelService.subscribed.subscribe( ( data:boolean ) => {
+            this.trendsSubscribed = data;
+            
+            if( this.router.url.indexOf( 'new' ) >= 0 ) {
+                this.trendsChannelService.send( { action:'new', timestamp: Math.floor( Date.now() / 1000 ) } );
+            }
+            if( this.router.url.indexOf( 'friends' ) >= 0 ) {
+                this.trendsChannelService.send( { action:'friends' } );
+            }
+            if( this.router.url.indexOf( 'popular' ) >= 0 ) {
+                this.trendsChannelService.send( { action:'popular' } );
+            }
+
+        } );
+    }
+
+    private unsubscribeTrandsChanel():void{
+
+        if ( this.trendsDataSubscription ){
+
+            this.trendsDataSubscription.unsubscribe();
+
+        }
+
+        if ( this.trendsSubscription ){
+
+            this.trendsSubscription.unsubscribe();
+
+        }
 
     }
 
