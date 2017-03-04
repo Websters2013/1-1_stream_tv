@@ -13,89 +13,64 @@ videos = [
         duration: "0:45",
         actors: [ "Анастасия Сердюк", "Сергей Сипливый", "Остап Ступка", "Александр Пискунов" ],
         tags: [  "#сериал", "#фільм", "#драма", "#комедия", "#новини"  ],
-        start: "0:47"
-    },
-
-    {
-        name: "Пеклеьна кухня",
-        url: "https://www.youtube.com/watch?v=U0cRpLa1fZM",
-        duration: "0:35",
-        actors: [ "Ара́м Миха́йлович Мнацака́нов" ],
-        tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
-        start: "18:31"
+        start: "24:47"
     },
     {
-        name: "Спецкор",
-        url: "https://www.youtube.com/watch?time_continue=12&v=eflGXYzdkr8",
-        duration: "0:30",
-        actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
-        tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
-        start: "19:06"
+        name: "Хозяйка",
+        url: "https://www.youtube.com/watch?v=0B4jA2Mvgy4&list=PLzg4Ge9VHZEwbxQ8vlWbQ8HjyOkKPSA5I&index=1",
+        duration: "0:50",
+        actors: [ "Анна Кошмал Екатерина", "Константин Войтенко", "Александра Перепелица" ],
+        tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+        start: "2:02"
     },
     {
-        name: "МИР НАИЗНАНКУ",
-        url: "https://www.youtube.com/watch?v=64G7ObR5FhA",
+        name: "Мир Наизнанку",
+        https: "//www.youtube.com/watch?v=L1wAWpDynhchttps://www.youtube.com/watch?v=L1wAWpDynhc",
         duration: "1:02",
         actors: [ "Дмитрий Коморов" ],
-        tags: [ "#телепрограма", "#путишестсия" ],
-        start: "19:36"
+        tags: ["путишестсия"],
+        start: "26:52"
     },
     {
-        name: "ЛавЛавCar",
-        url: "https://www.youtube.com/watch?v=AE9rvtacQOU",
-        duration: "0:48",
-        actors: [ ],
-        tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
-        start: "20:38"
+        name: "інспектор Фреймут",
+        https: "https://www.youtube.com/watch?v=PN0VX_WNLUU",
+        duration: "1:09",
+        actors: [ "Ольга фреймут"],
+        tags: ["телепрограмма", "реаліті-шоу"],
+        start: "26:52"
     },
-    {
-        name: "Життя після життя.",
-        url: "https://www.youtube.com/watch?v=MFJMzLZKPiE",
-        duration: "0:43",
-        actors: [ "Леонід Купрідо"," Андрій Чивуріна", "Олександр Кушнаренко", "Валентин Іванов" ],
-        tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#кохання" ],
-        start: "21:26"
-    },
-    {
-        name: "Одруження наосліп",
-        url: "https://www.youtube.com/watch?v=1g75rJC0qIg&t=87s",
-        duration: "1:24",
-        actors: [ ],
-        tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
-        start: "22:09"
-    },
-    {
-        name: "Українські сенсації",
-        url: "https://www.youtube.com/watch?v=Uckj1Wq2ybY&t=1s",
-        duration: "0:40",
-        actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
-        tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
-        start: "23:49"
-    },
-    {
-        name: "Гроші Пенсійний туризм в АТО",
-        url: "https://www.youtube.com/watch?v=awMc_oLvTKU",
-        duration: "0:54",
-        actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
-        tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
-        start: "24:29"
-    },
-    {
-        name: "Село на мільйон. 2 серія. Частина 1",
-        url: "https://www.youtube.com/watch?v=IfCHt4jBYNk",
-        duration: "0:20",
-        actors: [ "Дмитро Сова", "Анна Кошмал", "Костянтин Войтенко" ],
-        tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#новини", "#кохання" ],
-        start: "25:23"
-    },
-    {
-        name: "Найкращий тиждень мого життя. 2 серія",
-        url: "https://www.youtube.com/watch?v=-k1J_NkYGJo",
-        duration: "0:19",
-        actors: [ "Катерина Вострикова" ],
-        tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#кохання" ],
-        start: "25:43"
-    }
+     {
+         name: "На ножах",
+         https: "https://www.youtube.com/watch?v=QOXJyx9mfec",
+         duration: "1:21",
+         actors: [ "Ольга фреймут"],
+         tags: ["телепрограмма", "реаліті-шоу"],
+         start: "29:03"
+     },
+     {
+          name: "Центральная больница. 5 серия",
+          https: "https://www.youtube.com/watch?v=rE1iZc2SoeI",
+          duration: "0:45",
+          actors: [ "Станіслав Боклан", "Катерина Вострікова"],
+          tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+          start: "30:24"
+     },
+     {
+          name: "Папарацци. 2 серия",
+          https: "https://www.youtube.com/watch?v=eIcu5HsKG_k&list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3&index=3",
+          duration: "0:47",
+          actors: [ " Анастасия Сердюк" , "Сергей Сипливый", "Остап Ступка", "Александр Пискунов"],
+          tags: ["фільм", "драма","комедия", "новини "],
+          start: "31:09"
+     },
+     {
+           name: "Все одно ти будеш мій. Серія 1",
+           https: "https://www.youtube.com/watch?v=OCREvJRZYYY",
+           duration: "0:48",
+           actors: [ "Станіслав Боклан", "Катерина Вострікова"],
+           tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+           start: "31:56"
+     }
 ]
 
 time = 1488492000
