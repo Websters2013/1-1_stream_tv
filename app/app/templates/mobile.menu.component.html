@@ -36,12 +36,12 @@
                 <!--mobile-menu__item-->
                 <div class="mobile-menu__item">
 
-                    <a (click)="showSubMenu( item )" routerLink="{{ item.url }}"
+                    <div (click)="showSubMenu( item )"
                        [class.active]="data[ 'active_menu' ] == item.url">
 
                         <i [innerHTML]="item.icon"></i>
                         {{ item.text }}
-                    </a>
+                    </div>
 
                 </div>
                 <!--/mobile-menu__item-->
@@ -60,21 +60,14 @@
             <nav (swipeleft)="swipe( $event.type )">
 
                 <!--mobile-menu__item-->
-                <div class="mobile-menu__item" *ngFor="let item of subMenuItems[ data[ 'active_menu' ].substr( 1 ).split( '/' )[ 1 ] ]">
+                <div class="mobile-menu__item" *ngFor="let item of subMenuItems[ data[ 'active_menu' ].substr( 1 ).split( '/' )[ 0 ] ]">
 
                     <a routerLink="{{ item.url }}"
                        [class.active]="data[ 'active_sub_menu' ] == item.url"
                        (click)="closeMenu()">
 
                         <i [innerHTML]="item.icon"></i>
-                        {{ item.text }}
-
-                    </a>
-
-                    <a routerLink="{{ item.url }}"
-                       [class.active]="data[ 'active_sub_menu' ] == item.url">
-
-                        <i [innerHTML]="item.icon"></i>
+                        {{ data[ 'active_sub_menu' ] }}
                         {{ item.text }}
 
                     </a>
