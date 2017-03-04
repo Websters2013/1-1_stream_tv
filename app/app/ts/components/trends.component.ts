@@ -25,7 +25,7 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
     ){
 
         super( dataBindingService );
-        
+
         if( router.url.indexOf( 'new' ) >= 0 ) {
             this.title = 'Новинки';
         }

@@ -26,54 +26,15 @@
   &__thumbnail {
     overflow: hidden;
     display: block;
-    position: relative;
     height: 150px;
     margin-bottom: 15px;
     background-color: $main-grey-color;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    transition: box-shadow .15s ease-in-out;
 
-    &:before {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,.5);
-      content: '';
-    }
-
-    &.enter-top {
-
-      &:before {
-        display: block;
-        transform: translate(0, 0);
-        animation: enter-top .6s 1 ease-in-out;
-      }
-    }
-
-    &.leave-top {
-
-      &:before {
-        display: block;
-        transform: translate(0, -100%);
-        animation: leave-top .6s 1 ease-in-out;
-      }
-    }
-
-    &.enter-right {
-      animation: enter-right .3s infinite linear;
-    }
-
-    &.enter-bottom {
-      animation: enter-bottom .3s infinite linear;
-    }
-
-    &.enter-left {
-      animation: enter-left .3s infinite linear;
-    }
+    &:hover { box-shadow: 0 0 10px rgba(0,0,0,.8) }
   }
 
   &__description {
@@ -131,18 +92,6 @@
     }
   }
 }
-
-@keyframes enter-top {
-  0%{ transform: translate(0, -100%); }
-  100%{ transform: translate(0, 0); }
-}
-@keyframes leave-top {
-  0%{ transform: translate(0, 0); }
-  100%{ transform: translate(0, -100%); }
-}
-//@-webkit-keyframes enter-top {
-//  100%{ -webkit-transform: rotate(360deg); }
-//}
 
 @media (min-width: $phone-landscape) {
   .trends {
