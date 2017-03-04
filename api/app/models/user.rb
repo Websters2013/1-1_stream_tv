@@ -3,7 +3,6 @@ class User < ApplicationRecord
 
   has_many :devices
 
-
   private
 
     def send_to_me_channel
