@@ -30,7 +30,7 @@ export class LoginComponent extends SynchronizeComponent implements OnInit {
             this.data[ 'auth_token' ] = token;
             this.data[ 'changed' ] = true;
 
-            this.router.navigate( [ '/patients' ] );
+            this.router.navigate( [ '/trends/new' ] );
 
         } else {
 

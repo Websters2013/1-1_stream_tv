@@ -104,7 +104,7 @@ export class AuthComponent extends MainPreloaderComponent implements OnInit, OnD
         this.data[ 'auth_token' ] = token;
         this.data[ 'changed' ] = true;
 
-        this.router.navigate( [ '/patients' ] );
+        this.router.navigate( [ '/trends/new' ] );
 
     }
 

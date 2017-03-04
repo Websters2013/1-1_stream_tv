@@ -2,7 +2,6 @@ import { Component, Input }  from '@angular/core';
 
 import { SUBMENUTEXTS }      from "../texts/sub.menu.texts";
 
-import { Menu }              from "../things/menu";
 
 @Component({
     selector: 'sub-menu',
@@ -10,8 +9,8 @@ import { Menu }              from "../things/menu";
     styleUrls: [ 'app/css/sub.menu.component.css' ]
 })
 export class SubMenuComponent {
-    @Input() data:Object;
+    @Input() public data:Object;
 
-    content: Object = SUBMENUTEXTS;
+    public content: Object = SUBMENUTEXTS;
 
 }

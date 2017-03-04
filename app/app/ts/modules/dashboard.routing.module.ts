@@ -9,8 +9,8 @@ export const routes: Routes = [
         component: DashboardComponent,
         children: [
             {
-                path: '',
-                loadChildren: 'app/js/modules/patients.module#PatientsModule'
+                path: 'new',
+                loadChildren: 'app/js/modules/new.module#NewModule'
             }
         ]
     }

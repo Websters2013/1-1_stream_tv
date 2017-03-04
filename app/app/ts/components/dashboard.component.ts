@@ -83,6 +83,7 @@ export class DashboardComponent extends MainPreloaderComponent implements OnInit
             activeSubMenu = `/${pathItems[ 0 ]}/${pathItems[ 1 ]}`,
             changed = false;
 
+
         if( this.data[ 'active_menu' ] != activeMenu ){
             this.data[ 'active_menu' ] = `/${pathItems[ 0 ]}`;
             changed = true;
