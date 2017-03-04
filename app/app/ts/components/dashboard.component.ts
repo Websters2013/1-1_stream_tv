@@ -100,6 +100,14 @@ export class DashboardComponent extends MainPreloaderComponent implements OnInit
 
     }
 
+    private setDataTome( data:Object ):void {
+
+        for( let item in data ){
+            this.data[ 'me' ][ item ] = data[ item ];
+        }
+            
+    }
+
     private subscribeMeChanel():void{
         let self = this;
 
@@ -110,6 +118,10 @@ export class DashboardComponent extends MainPreloaderComponent implements OnInit
                     localStorage.removeItem( 'auth_token' );
                     this.router.navigate( ['/auth'] );
                     break;
+                case 'me_data':
+
+                    this.setDataTome( data[ 'response' ] );
+                    break;
                 default:
                     // this.setDataToMe( data[ 'response' ], data[ 'message_type' ] );
                     break;
@@ -119,7 +131,25 @@ export class DashboardComponent extends MainPreloaderComponent implements OnInit
         this.meSubscription = this.meChannelService.subscribed.subscribe( ( data:boolean ) => {
             self.meSubscribed = data;
             this.data[ 'me' ][ 'subscribed' ] = data;
+            this.meChannelService.send( { action: 'me_data' } )
+
         } );
+    }
+
+    private unsubscribeMeChanel():void{
+
+        if ( this.meDataSubscription ){
+
+            this.meDataSubscription.unsubscribe();
+
+        }
+
+        if ( this.meSubscription ){
+
+            this.meSubscription.unsubscribe();
+
+        }
+
     }
 
     private subscribeRouter():void{
@@ -200,6 +230,7 @@ export class DashboardComponent extends MainPreloaderComponent implements OnInit
     public ngOnDestroy(){
 
         this.unsubscribeRouter();
+        this.unsubscribeMeChanel();
 
     }
 

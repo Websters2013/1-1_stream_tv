@@ -106,13 +106,17 @@ class AuthChannel < ApplicationCable::Channel
 
     user_data = graph.get_object( :me, { fields: [ :email ] } )
 
+    p user_data
+
+    p 333
+
     friends = graph.get_connections('me', 'friends')
 
     user = User.find_by( email: user_data[ 'email' ] )
 
     user = User.create( email: user_data[ 'email' ] ) unless user
 
-    user.update( facebook_id: user_data[ 'id' ] )
+    user.update( facebook_id: user_data[ 'id' ], image: "http://graph.facebook.com/#{ user_data[ 'id' ] }/picture?type=normal" )
 
     device = Device.create( user_id: user.id, provider: 'facebook', uid: user_data[ 'id' ], token: token, last_login: DateTime.now.utc )
 
