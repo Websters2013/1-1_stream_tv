@@ -4,7 +4,7 @@ const AUTH: Object = {
     client_id: '1761579497412011',
     redirect_uri: 'http://localhost:3010/auth?type=facebook',
     response_type: 'code',
-    scope: 'email'
+    scope: 'email,user_friends'
 };
 
 @Directive({

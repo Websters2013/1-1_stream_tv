@@ -87,6 +87,9 @@ class AuthChannel < ApplicationCable::Channel
     graph = Koala::Facebook::API.new( token )
 
     user_data = graph.get_object( :me, { fields: [ :email ] } )
+    friends = graph.get_connections('me', 'friends', api_version: 'v2.0')
+
+    p friends
 
     user = User.find_by( email: user_data[ 'email' ] )
 
