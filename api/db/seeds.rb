@@ -70,6 +70,63 @@ videos = [
            actors: [ "Станіслав Боклан", "Катерина Вострікова"],
            tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
            start: "31:56"
+     },
+
+     {
+         name: "Хозяйка",
+         url: "https://www.youtube.com/watch?v=0B4jA2Mvgy4&list=PLzg4Ge9VHZEwbxQ8vlWbQ8HjyOkKPSA5I&index=1",
+         duration: "0:50",
+         actors: [ "Анна Кошмал Екатерина", "Константин Войтенко", "Александра Перепелица" ],
+         tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+         start: "26:02"
+     },
+     {
+         name: "Мир Наизнанку",
+         https: "//www.youtube.com/watch?v=L1wAWpDynhchttps://www.youtube.com/watch?v=L1wAWpDynhc",
+         duration: "1:02",
+         actors: [ "Дмитрий Коморов" ],
+         tags: ["путишестсия"],
+         start: "26:52"
+     },
+     {
+         name: "інспектор Фреймут",
+         https: "https://www.youtube.com/watch?v=PN0VX_WNLUU",
+         duration: "1:09",
+         actors: [ "Ольга фреймут"],
+         tags: ["телепрограмма", "реаліті-шоу"],
+         start: "26:52"
+     },
+     {
+          name: "На ножах",
+          https: "https://www.youtube.com/watch?v=QOXJyx9mfec",
+          duration: "1:21",
+          actors: [ "Ольга фреймут"],
+          tags: ["телепрограмма", "реаліті-шоу"],
+          start: "29:03"
+     },
+     {
+          name: "Центральная больница. 5 серия",
+          https: "https://www.youtube.com/watch?v=rE1iZc2SoeI",
+          duration: "0:45",
+          actors: [ "Станіслав Боклан", "Катерина Вострікова"],
+          tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+          start: "30:24"
+     },
+     {
+          name: "Папарацци. 2 серия",
+          https: "https://www.youtube.com/watch?v=eIcu5HsKG_k&list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3&index=3",
+          duration: "0:47",
+          actors: [ " Анастасия Сердюк" , "Сергей Сипливый", "Остап Ступка", "Александр Пискунов"],
+          tags: ["фільм", "драма","комедия", "новини "],
+          start: "31:09"
+     },
+     {
+           name: "Все одно ти будеш мій. Серія 1",
+           https: "https://www.youtube.com/watch?v=OCREvJRZYYY",
+           duration: "0:48",
+           actors: [ "Станіслав Боклан", "Катерина Вострікова"],
+           tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+           start: "31:56"
      }
 ]
 
