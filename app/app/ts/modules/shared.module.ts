@@ -6,6 +6,7 @@ import { FormsModule }             from "@angular/forms";
 import { PerfectScrollDirective }  from "../directives/perfect.scroll.directive";
 
 import {KeysPipe} from "../pipes/filter.select.pipe";
+import {TimePipe} from "../pipes/time.pipe";
 
 @NgModule({
     imports: [
@@ -16,7 +17,8 @@ import {KeysPipe} from "../pipes/filter.select.pipe";
     declarations: [
         PerfectScrollDirective,
 
-        KeysPipe
+        KeysPipe,
+        TimePipe
     ],
     exports: [
         CommonModule,
@@ -25,7 +27,8 @@ import {KeysPipe} from "../pipes/filter.select.pipe";
 
         PerfectScrollDirective,
 
-        KeysPipe
+        KeysPipe,
+        TimePipe
     ]
 })
 
