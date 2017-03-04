@@ -8,7 +8,7 @@ export const routes: Routes = [
         component: LoginComponent
     },
     {
-        path: 'patients',
+        path: 'trends',
         loadChildren: 'app/js/modules/dashboard.module#DashboardModule'
     },
     {
