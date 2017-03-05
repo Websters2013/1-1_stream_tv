@@ -3,7 +3,7 @@ require 'date'
 videos = [
     {
         name: "Життя після життя. 1 серія",
-        url: "https://www.youtube.com/watch?v=EMuJYcDcXYM",
+        url: "https://www.youtube.com/embed/EMuJYcDcXYM",
         duration: "0:47",
         actors: [ "Леонід Купрідо", "Андрій Чивуріна", "Олександр Кушнаренко", "Валентин Іванов" ],
         tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#новини",  "#кохання" ],
@@ -12,7 +12,7 @@ videos = [
     },
     {
         name: "Папараці. 4 серія",
-        url: "https://www.youtube.com/watch?v=qBWTOR0DJlI&list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
+        url: "https://www.youtube.com/embed/qBWTOR0DJlI?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
         duration: "0:45",
         actors: [ "Анастасия Сердюк", "Сергей Сипливый", "Остап Ступка", "Александр Пискунов" ],
         tags: [  "#сериал", "#фільм", "#драма", "#комедия", "#новини"  ],
@@ -21,7 +21,7 @@ videos = [
     },
     {
         name: "Чудо по расписанию. 1 серия",
-        url: "https://www.youtube.com/watch?v=OD_-C5fnz-c",
+        url: "https://www.youtube.com/embed/OD_-C5fnz-c",
         duration: "0:46",
         actors: [ "Денис Мартынов", "Дарья Трегубова", "Дмитрий Лаленков", "Инна Мирошниченко" ],
         tags: [ "#сериал", "#прем'єра", "#фільм", "#новини", "#новини 1+1", "#кохання" ],
@@ -30,7 +30,7 @@ videos = [
     },
     {
         name: "Гаджети для крадіїв",
-        url: "https://www.youtube.com/watch?v=K5q2TXTe7AQ",
+        url: "https://www.youtube.com/embed/K5q2TXTe7AQ",
         duration: "0:11",
         actors: [ "Олександр Дубінський" ],
         tags: [ "#телепрограма", "#грощі", "#телепрограмма", "#корупция", "#преступления" ],
@@ -39,7 +39,7 @@ videos = [
     },
     {
         name: "Проводимо вихідні разом зі 'Сніданком. Вихідний'!",
-        url: "https://www.youtube.com/watch?v=LXwtaKm4Bs0",
+        url: "https://www.youtube.com/embed/LXwtaKm4Bs0",
         duration: "0:35",
         actors: [ "Алла Мазур", "Анатолій Анатоліч", "Руслан Сенічкін" ],
         tags: [ "#телепрограма", "#ранок", "#вихідні", "#телепрограма" ],
@@ -48,7 +48,7 @@ videos = [
     },
     {
         name: "ТСН",
-        url: "https://www.youtube.com/watch?v=n6GM5qwcQuM",
+        url: "https://www.youtube.com/embed/n6GM5qwcQuM",
         duration: "0:51",
         actors: [ "Алла Мазур"],
         tags: ["#телепрограма", "#новости", "#новое", "#прошествия"],
@@ -57,7 +57,7 @@ videos = [
     },
     {
         name: "Право на владу за 2 березня 2017 року",
-        url: "https://www.youtube.com/watch?v=CDD5_LKJWNw",
+        url: "https://www.youtube.com/embed/CDD5_LKJWNw",
         duration: "1:22",
         actors: [ "Мосейчук" ],
         tags: [ "#телепрограма", "#ведущая", "#соведущая", "#ток-шоу", "#блогер", "#иванов", "#тсн", "#мосейчук" ],
@@ -66,7 +66,7 @@ videos = [
     },
     {
         name: "МИР НАИЗНАНКУ",
-        url: "https://www.youtube.com/watch?v=fIiQveCJb3s",
+        url: "https://www.youtube.com/embed/fIiQveCJb3s",
         duration: "0:51",
         actors: ["Дмитрий Коморов" ],
         tags: ["#телепрограма", "#путишестсия"],
@@ -75,7 +75,7 @@ videos = [
     },
     {
         name: "На ножах",
-        url: "https://www.youtube.com/watch?v=jSpRVt2Bj4w",
+        url: "https://www.youtube.com/embed/jSpRVt2Bj4w",
         duration: "1:14",
         actors: [ "Ольга фреймут"],
         tags: ["телепрограмма", "реаліті-шоу"],
@@ -84,7 +84,7 @@ videos = [
     },
     {
         name: "Українські сенсації",
-        url: "https://www.youtube.com/watch?v=Uckj1Wq2ybY",
+        url: "https://www.youtube.com/embed/Uckj1Wq2ybY",
         duration: "0:40",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
         tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
@@ -93,7 +93,7 @@ videos = [
     },
     {
         name: "Переломний момент",
-        url: "https://www.youtube.com/watch?v=TPihsNram7I",
+        url: "https://www.youtube.com/embed/TPihsNram7I",
         duration: "1:33",
         actors: [ "Марк Джонатан Харріс"],
         tags: ["#документальный фильм", "#новости"],
@@ -102,7 +102,7 @@ videos = [
     },
     {
         name: "Секретні матеріали",
-        url: "https://www.youtube.com/watch?v=LL3uCsKbcyw&list=PLzg4Ge9VHZEy73oLWze01uB3OxxLXji1A&index=1",
+        url: "https://www.youtube.com/embed/LL3uCsKbcyw?list=PLzg4Ge9VHZEy73oLWze01uB3OxxLXji1A",
         duration: "0:20",
         actors: ["Департамент журналістських розслідувань телеканалу 1+1" ],
         tags: ["#новости", "#новое", "#прошествия"],
@@ -111,7 +111,7 @@ videos = [
     },
     {
         name: "Одруження наосліп",
-        url: "https://www.youtube.com/watch?v=1g75rJC0qIg",
+        url: "https://www.youtube.com/embed/1g75rJC0qIg",
         duration: "1:24",
         actors: [  ],
         tags: [ "#телепрограмма", "#реаліті-шоу" ],
@@ -120,7 +120,7 @@ videos = [
     },
     {
         name: "Село на мільйон",
-        url: "https://www.youtube.com/watch?v=0RjgA1KNoHw",
+        url: "https://www.youtube.com/embed/0RjgA1KNoHw",
         duration: "0:51",
         actors: [ "Дмитро Сова", "Анна Кошмал", "Костянтин Войтенко" ],
         tags: [ "#прем'єра", "#фільм","#драма", "#мелодрама","#новини" ,"#кохання" ],
@@ -128,17 +128,17 @@ videos = [
         preview: "14.jpg"
     },
     {
-        name: "Центральная больница",
-        url: "https://www.youtube.com/watch?v=IDKhVL_FoNA&index=2&list=PLzg4Ge9VHZEz9Voc8pOdDu6_u23HJmi9O",
+        name: "Папараці. 4 серія",
+        url: "https://www.youtube.com/embed/qBWTOR0DJlI?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
         duration: "0:45",
-        actors: [ "Станіслав Боклан", "Катерина Вострікова" ],
-        tags: [ "#прем'єра", "#фільм","#драма", "#мелодрама","#новини" ,"#кохання" ],
+        actors: [ "Анастасия Сердюк", "Сергей Сипливый", "Остап Ступка", "Александр Пискунов" ],
+        tags: [  "#сериал", "#фільм", "#драма", "#комедия", "#новини"  ],
         start: "12:10",
-        preview: "15.jpg"
+        preview: "2.jpg"
     },
     {
         name: "Українські сенсації",
-        url: "https://www.youtube.com/watch?v=6k6KklgU5os",
+        url: "https://www.youtube.com/embed/6k6KklgU5os",
         duration: "0:43",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1"],
         tags: ["#новости", "#новое", "#прошествия"],
@@ -147,7 +147,7 @@ videos = [
     },
     {
         name: "Ті, що вражають",
-        url: "https://www.youtube.com/watch?v=wHlzL_As3xI",
+        url: "https://www.youtube.com/embed/wHlzL_As3xI",
         duration: "1:57",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1"],
         tags: ["#новости", "#новое", "#прошествия"],
@@ -156,7 +156,7 @@ videos = [
     },
     {
         name: "Инспектор Фреймут",
-        url: "https://www.youtube.com/watch?v=PN0VX_WNLUU",
+        url: "https://www.youtube.com/embed/PN0VX_WNLUU",
         duration: "1:09",
         actors: [ "Ольга фреймут"],
         tags: ["#телепрограмма", "#реаліті-шоу"],
@@ -165,7 +165,7 @@ videos = [
     },
     {
         name: "Світського життя",
-        url: "https://www.youtube.com/watch?v=AZRQfuHquxA",
+        url: "https://www.youtube.com/embed/AZRQfuHquxA",
         duration: "1:47",
         actors: ["Катерина Осача" ],
         tags: ["#телепрограмма", "#реаліті-шоу"],
@@ -174,7 +174,7 @@ videos = [
     },
     {
         name: "Пеклеьна кухня",
-        url: "https://www.youtube.com/watch?v=U0cRpLa1fZM",
+        url: "https://www.youtube.com/embed/U0cRpLa1fZM",
         duration: "0:35",
         actors: [ "Ара́м Миха́йлович Мнацака́нов" ],
         tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
@@ -183,7 +183,7 @@ videos = [
     },
     {
         name: "Спецкор",
-        url: "https://www.youtube.com/watch?time_continue=12&v=eflGXYzdkr8",
+        url: "https://www.youtube.com/embed/eflGXYzdkr8",
         duration: "0:30",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
         tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
@@ -192,7 +192,7 @@ videos = [
     },
     {
         name: "МИР НАИЗНАНКУ",
-        url: "https://www.youtube.com/watch?v=64G7ObR5FhA",
+        url: "https://www.youtube.com/embed/64G7ObR5FhA",
         duration: "1:02",
         actors: [ "Дмитрий Коморов" ],
         tags: [ "#телепрограма", "#путишестсия" ],
@@ -201,7 +201,7 @@ videos = [
     },
     {
         name: "ЛавЛавCar",
-        url: "https://www.youtube.com/watch?v=AE9rvtacQOU",
+        url: "https://www.youtube.com/embed/AE9rvtacQOU",
         duration: "0:48",
         actors: [ ],
         tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
@@ -210,7 +210,7 @@ videos = [
     },
     {
         name: "Життя після життя.",
-        url: "https://www.youtube.com/watch?v=MFJMzLZKPiE",
+        url: "https://www.youtube.com/embed/MFJMzLZKPiE",
         duration: "0:43",
         actors: [ "Леонід Купрідо"," Андрій Чивуріна", "Олександр Кушнаренко", "Валентин Іванов" ],
         tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#кохання" ],
@@ -219,7 +219,7 @@ videos = [
     },
     {
         name: "Одруження наосліп",
-        url: "https://www.youtube.com/watch?v=1g75rJC0qIg&t=87s",
+        url: "https://www.youtube.com/embed/1g75rJC0qIg",
         duration: "1:24",
         actors: [ ],
         tags: [ "#реаліті-шоу", "#телепрограмма", "#реаліті-шоу" ],
@@ -228,7 +228,7 @@ videos = [
     },
     {
         name: "Українські сенсації",
-        url: "https://www.youtube.com/watch?v=Uckj1Wq2ybY&t=1s",
+        url: "https://www.youtube.com/embed/Uckj1Wq2ybY",
         duration: "0:40",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
         tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
@@ -237,7 +237,7 @@ videos = [
     },
     {
         name: "Гроші Пенсійний туризм в АТО",
-        url: "https://www.youtube.com/watch?v=awMc_oLvTKU",
+        url: "https://www.youtube.com/embed/awMc_oLvTKU",
         duration: "0:54",
         actors: [ "Департамент журналістських розслідувань телеканалу 1+1" ],
         tags: [ "#телепрограма", "#новости", "#новое", "#прошествия" ],
@@ -246,7 +246,7 @@ videos = [
     },
     {
         name: "Село на мільйон. 2 серія. Частина 1",
-        url: "https://www.youtube.com/watch?v=IfCHt4jBYNk",
+        url: "https://www.youtube.com/embed/IfCHt4jBYNk",
         duration: "0:20",
         actors: [ "Дмитро Сова", "Анна Кошмал", "Костянтин Войтенко" ],
         tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#новини", "#кохання" ],
@@ -255,7 +255,7 @@ videos = [
     },
     {
         name: "Найкращий тиждень мого життя. 2 серія",
-        url: "https://www.youtube.com/watch?v=-k1J_NkYGJo",
+        url: "https://www.youtube.com/embed/-k1J_NkYGJo",
         duration: "0:19",
         actors: [ "Катерина Вострикова" ],
         tags: [ "#сериал", "#прем'єра", "#фільм", "#драма", "#мелодрама", "#новини", "#кохання" ],
@@ -265,7 +265,7 @@ videos = [
 
      {
          name: "Хозяйка",
-         url: "https://www.youtube.com/watch?v=0B4jA2Mvgy4&list=PLzg4Ge9VHZEwbxQ8vlWbQ8HjyOkKPSA5I&index=1",
+         url: "https://www.youtube.com/embed/0B4jA2Mvgy4?list=PLzg4Ge9VHZEwbxQ8vlWbQ8HjyOkKPSA5I",
          duration: "0:50",
          actors: [ "Анна Кошмал Екатерина", "Константин Войтенко", "Александра Перепелица" ],
          tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
@@ -274,7 +274,7 @@ videos = [
      },
      {
          name: "Мир Наизнанку",
-         https: "//www.youtube.com/watch?v=L1wAWpDynhchttps://www.youtube.com/watch?v=L1wAWpDynhc",
+         url: "https://www.youtube.com/embed/L1wAWpDynhc",
          duration: "1:02",
          actors: [ "Дмитрий Коморов" ],
          tags: ["путишестсия"],
@@ -283,7 +283,7 @@ videos = [
      },
      {
          name: "інспектор Фреймут",
-         https: "https://www.youtube.com/watch?v=PN0VX_WNLUU",
+         url: "https://www.youtube.com/embed/PN0VX_WNLUU",
          duration: "1:09",
          actors: [ "Ольга фреймут"],
          tags: ["телепрограмма", "реаліті-шоу"],
@@ -292,7 +292,7 @@ videos = [
      },
      {
           name: "На ножах",
-          https: "https://www.youtube.com/watch?v=QOXJyx9mfec",
+          url: "https://www.youtube.com/embed/QOXJyx9mfec",
           duration: "1:21",
           actors: [ "Ольга фреймут"],
           tags: ["телепрограмма", "реаліті-шоу"],
@@ -300,17 +300,17 @@ videos = [
           preview: "33.jpg"
      },
      {
-          name: "Центральная больница. 5 серия",
-          https: "https://www.youtube.com/watch?v=rE1iZc2SoeI",
+          name: "Папараці. 4 серія",
+          url: "https://www.youtube.com/embed/qBWTOR0DJlI?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
           duration: "0:45",
-          actors: [ "Станіслав Боклан", "Катерина Вострікова"],
-          tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],
+          actors: [ "Анастасия Сердюк", "Сергей Сипливый", "Остап Ступка", "Александр Пискунов" ],
+          tags: [  "#сериал", "#фільм", "#драма", "#комедия", "#новини"  ],
           start: "30:24",
-          preview: "34.jpg"
+          preview: "2.jpg"
      },
      {
           name: "Папарацци. 2 серия",
-          https: "https://www.youtube.com/embed/eIcu5HsKG_k?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
+          url: "https://www.youtube.com/embed/eIcu5HsKG_k?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
           duration: "0:47",
           actors: [ " Анастасия Сердюк" , "Сергей Сипливый", "Остап Ступка", "Александр Пискунов"],
           tags: ["фільм", "драма","комедия", "новини "],
@@ -319,7 +319,7 @@ videos = [
      },
      {
            name: "Все одно ти будеш мій. Серія 1",
-           https: "https://www.youtube.com/embed/OCREvJRZYYY",
+           url: "https://www.youtube.com/embed/OCREvJRZYYY",
            duration: "0:48",
            actors: [ "Станіслав Боклан", "Катерина Вострікова"],
            tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],

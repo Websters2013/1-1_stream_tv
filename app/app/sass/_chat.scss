@@ -23,6 +23,8 @@
       opacity: 0;
       pointer-events: none;
       animation: chat-item 5s ease-in-out 1;
+
+      &.fast-animation { animation-duration: .3s }
     }
   }
 
