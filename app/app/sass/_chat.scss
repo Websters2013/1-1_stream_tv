@@ -5,7 +5,26 @@
   position: relative;
   height: 60vh;
   min-height: 300px;
-  margin: 20px 0 100px;
+  margin: 20px 0;
+
+  &.chat_fullScreen {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 50%;
+    z-index: 9999999;
+    transform: translate(-50%, 0);
+
+    .chat__list {
+      height: 100%;
+    }
+
+    .chat__item {
+      opacity: 0;
+      pointer-events: none;
+      animation: chat-item 5s ease-in-out 1;
+    }
+  }
 
   &__add {
     display: flex;
@@ -32,7 +51,7 @@
       width: 50px;
       height: 50px;
       border-radius: 50%;
-      background: $main-red-color-1;
+      background: red;
       border: none;
       transition: box-shadow .15s ease-in-out;
 
@@ -58,24 +77,23 @@
 
   &__list {
     position: absolute;
-    top: 0;
     bottom: 80px;
     left: 0;
     width: 100%;
-    overflow-y: scroll;
-    padding: 10px 15px;
-    border-top: 4px solid #f2f2f2;
-    border-bottom: 4px solid #f2f2f2;
-    background: #f2f2f2;
-    border-radius: 6px;
+    padding: 5px;
   }
 
   &__item {
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
     font-size: 12px;
+    transition: opacity .3s ease-in-out;
+    background: #f2f2f2;
+    border-radius: 6px;
   }
 
   &__pic {
@@ -108,27 +126,36 @@
   }
 }
 
-@media (min-width: 640px) {
-  .chat {
-
-    &__item {
-      font-size: 14px;
-    }
-
-    &__head time {
-      font-size: 12px;
-    }
+@keyframes chat-item {
+  0% {
+    opacity: 1;
+    pointer-events: fill;
+  }
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: fill;
   }
 }
 
-@media (min-width: 1024px) {
-  .chat {
-
+@-webkit-keyframes chat-item {
+  0% {
+    opacity: 1;
+    pointer-events: fill;
   }
-}
-
-@media (min-width: 1280px) {
-  .chat {
-    margin: 0;
+  50% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: fill;
   }
 }
