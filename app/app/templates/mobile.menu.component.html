@@ -57,7 +57,7 @@
                 <!--mobile-menu__item-->
                 <div class="mobile-menu__item" *ngFor="let item of content">
 
-                    <div (click)="showSubMenu( item )"
+                    <div (click)="showSubMenu( item )"  routerLink="{{ item.url }}"
                          [class.active]="data[ 'active_menu' ] == item.url">
 
                         <i [innerHTML]="item.icon"></i>

@@ -227,7 +227,8 @@
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
     }
-    > div {
+    div,
+    a {
       position: absolute;
       display: flex;
       align-items: center;
@@ -282,6 +283,10 @@
 
       path {
         fill: $main-white-color;
+      }
+
+      &.users_programms {
+        height: 40px;
       }
     }
   }
