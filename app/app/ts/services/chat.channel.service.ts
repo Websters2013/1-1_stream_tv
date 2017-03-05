@@ -4,17 +4,16 @@ import { ChannelWebsocketService }  from "./channel.websocket.service";
 import { WebSocketService }         from "./websocket.service";
 
 @Injectable()
-export class VideoChannelService extends ChannelWebsocketService {
+export class ChatChannelService extends ChannelWebsocketService {
 
-    constructor( websocketService:WebSocketService ){
+    constructor( websocketService: WebSocketService ){
 
         super( websocketService );
 
         this.identifier = {
-            channel: 'VideoChannel',
+            channel: 'ChatChannel',
             token: window.localStorage.getItem( 'auth_token' )
         };
-
 
     }
 

@@ -310,7 +310,7 @@ videos = [
      },
      {
           name: "Папарацци. 2 серия",
-          https: "https://www.youtube.com/watch?v=eIcu5HsKG_k&list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3&index=3",
+          https: "https://www.youtube.com/embed/eIcu5HsKG_k?list=PLzg4Ge9VHZEzJUySETmJkzUPnHFYhde_3",
           duration: "0:47",
           actors: [ " Анастасия Сердюк" , "Сергей Сипливый", "Остап Ступка", "Александр Пискунов"],
           tags: ["фільм", "драма","комедия", "новини "],
@@ -319,7 +319,7 @@ videos = [
      },
      {
            name: "Все одно ти будеш мій. Серія 1",
-           https: "https://www.youtube.com/watch?v=OCREvJRZYYY",
+           https: "https://www.youtube.com/embed/OCREvJRZYYY",
            duration: "0:48",
            actors: [ "Станіслав Боклан", "Катерина Вострікова"],
            tags: ["прем'єра", "фільм","драма", "мелодрама", "новини","новини" ,"кохання"],

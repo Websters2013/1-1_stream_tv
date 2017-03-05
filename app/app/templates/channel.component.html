@@ -1,1 +1,74 @@
-<div class="channel"></div>
+<div class="channel">
+
+    <iframe *ngIf="data[ 'video' ]" width="560" height="315" src="https://www.youtube.com/embed/BfFK1oQaO80" frameborder="0" allowfullscreen></iframe>
+
+    <!-- chat -->
+    <div class="chat">
+
+        <!-- chat__list -->
+        <div class="chat__list" perfectScroll>
+
+            <!-- chat__item -->
+            <div class="chat__item" *ngFor="let message of messages">
+                <div class="chat__pic"><img width="50" height="50" alt="" src="{{ message[ 'user' ][ 'image' ] }}"></div>
+                <div class="chat__wrap">
+                    <div class="chat__head">
+                        <strong class="chat__user">User Nmae</strong>
+                        <time attr.datetime="{{1488648771 | time: true}}">{{message[ 'created_at' ] | time: false}}</time>
+                    </div>
+                    {{message[ 'text' ]}}
+                </div>
+            </div>
+            <!-- /chat__item -->
+
+            <!--&lt;!&ndash; chat__item &ndash;&gt;-->
+            <!--<div class="chat__item">-->
+                <!--<div class="chat__pic"><img width="50" height="50" alt="" src="/app/pic/new1.jpg"></div>-->
+                <!--<div class="chat__wrap">-->
+                    <!--<div class="chat__head">-->
+                        <!--<strong class="chat__user">User Nmae</strong>-->
+                        <!--<time attr.datetime="{{1488562460 | time: true}}">{{1488562460 | time: false}}</time>-->
+                    <!--</div>-->
+                    <!--Comment comment comment-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /chat__item &ndash;&gt;-->
+
+            <!--&lt;!&ndash; chat__item &ndash;&gt;-->
+            <!--<div class="chat__item">-->
+                <!--<div class="chat__pic"><img width="50" height="50" alt="" src="/app/pic/new1.jpg"></div>-->
+                <!--<div class="chat__wrap">-->
+                    <!--<div class="chat__head">-->
+                        <!--<strong class="chat__user">User Nmae</strong>-->
+                        <!--<time attr.datetime="{{1488476060 | time: true}}">{{1488476060 | time: false}}</time>-->
+                    <!--</div>-->
+                    <!--Comment comment comment-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; /chat__item &ndash;&gt;-->
+
+        </div>
+        <!-- /chat__list -->
+
+
+            <form class="chat__add" #chatForm="ngForm" novalidate (submit)="submit()">
+
+                <div class="hannel__field">
+            <textarea id="name" type="text" name="name"
+                      [(ngModel)]="text"
+                      #name="ngModel"
+                      placeholder="Добавить комментарий"
+                      required></textarea>
+                </div>
+
+                <button type="submit" class="btn" [disabled]="chatForm.invalid">Save</button>
+
+
+            </form>
+
+    </div>
+    <!-- /chat -->
+
+
+    
+</div>

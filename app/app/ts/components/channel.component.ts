@@ -4,6 +4,7 @@ import {Subscription} from "rxjs";
 import {SynchronizeComponent} from "./synchronize.component";
 import {DataBindingService} from "../services/data.binding.service";
 import {Router} from "@angular/router";
+import {ChatChannelService} from "../services/chat.channel.service";
 
 @Component({
     selector: 'channel',
@@ -16,23 +17,32 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
     private videoDataSubscription: Subscription;
     private videoSubscription: Subscription;
 
+    public text:string;
+    public messages:Object[];
+
+    private chatSubscribed:boolean = false;
+    private chatDataSubscription: Subscription;
+    private chatSubscription: Subscription;
+
     constructor( protected dataBindingService:DataBindingService,
                  private router:Router,
-                 private videoChannelService:VideoChannelService ){
+                 private videoChannelService:VideoChannelService,
+                private chatChannelService:ChatChannelService){
 
         super( dataBindingService );
 
-
+        this.subscribeChatChannel();
 
     }
 
     private subscribeVideoChannel():void{
 
         this.videoDataSubscription = this.videoChannelService.observableData.subscribe( ( data:Object ) => {
-
-            console.log(data);
             
+            this.chatChannelService.start( data[ 'response' ]['id'] );
+
             this.data[ 'video' ] = data[ 'response' ];
+            console.log(this.data[ 'video' ]);
 
             this.data[ 'changed' ] = true;
         } );
@@ -43,15 +53,6 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
             if( this.router.url.indexOf( 'one_plus_one' ) >= 0 ) {
                 this.videoChannelService.send( { action:'online',name: 'one_plus_one', timestamp: Math.floor( Date.now() / 1000 ) } );
             }
-            if( this.router.url.indexOf( 'two_plus_two' ) >= 0 ) {
-                this.videoChannelService.send( { action:'online',name: 'two_plus_two', timestamp: Math.floor( Date.now() / 1000 ) } );
-            }
-            // if( this.router.url.indexOf( 'friends' ) >= 0 ) {
-            //     this.trendsChannelService.send( { action:'friends' } );
-            // }
-            // if( this.router.url.indexOf( 'popular' ) >= 0 ) {
-            //     this.trendsChannelService.send( { action:'popular' } );
-            // }
 
         } );
     }
@@ -59,6 +60,7 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
     public ngOnDestroy():void {
         this.unsubscribeData();
         this.unsubscribeVideoChannel();
+        this.unsubscribeChatChannel();
         delete this.data[ 'video' ];
         this.data[ 'changed' ] = true;
 
@@ -67,7 +69,10 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
     public ngOnInit():void {
         this.updateData( this.dataBindingService.getData() );
 
+        this.videoChannelService.start();
+
         this.subscribeVideoChannel();
+
 
 
     }
@@ -89,6 +94,40 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
         this.videoChannelService.unsubscribe();
         this.videoSubscribed = false;
 
+    }
+
+    public subscribeChatChannel(){
+        this.chatDataSubscription = this.chatChannelService.observableData.subscribe( ( data:Object ) => {
+
+            if( data[ 'message_type' ] == 'all' ){
+                this.messages = data[ 'response' ]
+            }
+
+            if( data[ 'message_type' ] == 'new' ){
+                this.messages.push( data[ 'response' ] )
+            }
+
+        } );
+
+        this.chatSubscription = this.chatChannelService.subscribed.subscribe( ( data:boolean ) => {
+            this.chatSubscribed = data;
+
+        } );
+    }
+
+    public unsubscribeChatChannel(){
+        if( this.chatDataSubscription ){
+            this.chatDataSubscription.unsubscribe();
+        }
+        if( this.chatSubscription ){
+            this.chatSubscription.unsubscribe();
+        }
+        this.chatChannelService.unsubscribe();
+    }
+
+    public submit(){
+        this.chatChannelService.send( { action: 'say', text: this.text } );
+        this.text = '';
     }
 
 }

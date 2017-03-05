@@ -2,7 +2,7 @@ class VideoChannel < ApplicationCable::Channel
   before_subscribe :authenticate
 
   def subscribed
-    stream_from "video_#{ self.uuid }"
+    stream_from "video_#{ current_user.id }"
   end
 
   def online( data )
@@ -18,9 +18,6 @@ class VideoChannel < ApplicationCable::Channel
           response: Video.serialize( video )
       }
     end
-
-    p 500
-    unsubscribed
 
   end
 

@@ -3,6 +3,7 @@ import { ChannelComponent }           from "../components/channel.component";
 import { ChannelRoutingModule }  from "./channel.routing.module";
 import { SharedModule }          from "./shared.module";
 import {VideoChannelService} from "../services/video.channel.service";
+import {ChatChannelService} from "../services/chat.channel.service";
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import {VideoChannelService} from "../services/video.channel.service";
         ChannelComponent
     ],
     providers: [
-        VideoChannelService
+        VideoChannelService,
+        ChatChannelService
     ]
 })
 export class ChannelModule {

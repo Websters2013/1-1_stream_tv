@@ -6,10 +6,12 @@ class Video < ApplicationRecord
 
   has_many :messages
 
+
   def self.serialize( video )
     {
       id: video.id,
       name: video.name,
+      url: video.url,
       time_start: video.time_start.to_i,
       time_end: video.time_end.to_i,
       users: video.users,
@@ -18,5 +20,7 @@ class Video < ApplicationRecord
       thumbnail: video.thumbnail
     }
   end
+
+
 
 end

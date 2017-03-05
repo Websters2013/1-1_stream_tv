@@ -52,11 +52,10 @@
         <!--mobile-menu__main-->
         <div class="mobile-menu__main" [class.active]="data[ 'popups' ][ 'mobile_sub_menu' ]">
 
-            <nav *ngFor="let item of content"
-                 (swipeleft)="swipe( $event.type )">
+            <nav (swipeleft)="swipe( $event.type )">
 
                 <!--mobile-menu__item-->
-                <div class="mobile-menu__item">
+                <div class="mobile-menu__item" *ngFor="let item of content">
 
                     <div (click)="showSubMenu( item )"
                          [class.active]="data[ 'active_menu' ] == item.url">
@@ -89,7 +88,6 @@
                        (click)="closeMenu()">
 
                         <i [innerHTML]="item.icon"></i>
-                        {{ data[ 'active_sub_menu' ] }}
                         {{ item.text }}
 
                     </a>
