@@ -1,0 +1,44 @@
+/*---------- channel ----------*/
+.channel {
+  height: calc(100vh - 50px);
+  padding: 15px;
+
+  &__video {
+    width: 100%;
+  }
+
+  .chat {
+    width: 100%;
+  }
+}
+
+@media (min-width: $phone-landscape) {
+  .channel {
+
+  }
+}
+@media (min-width: $tablet-portrait) {
+  .channel {
+    display: flex;
+    align-items: flex-start;
+
+    &__video {
+      width: 70%;
+    }
+
+    .chat {
+      width: 30%;
+    }
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .channel {
+
+  }
+}
+@media (min-width: $desktop) {
+  .channel {
+
+  }
+}
+/*---------- /channel ---------*/
