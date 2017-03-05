@@ -19,6 +19,16 @@
 }
 @media (min-width: $tablet-portrait) {
   .channel {
+
+  }
+}
+@media (min-width: $tablet-landscape) {
+  .channel {
+
+  }
+}
+@media (min-width: $desktop) {
+  .channel {
     display: flex;
     align-items: flex-start;
 
@@ -32,16 +42,6 @@
       width: 30%;
       margin: 0;
     }
-  }
-}
-@media (min-width: $tablet-landscape) {
-  .channel {
-
-  }
-}
-@media (min-width: $desktop) {
-  .channel {
-
   }
 }
 /*---------- /channel ---------*/
