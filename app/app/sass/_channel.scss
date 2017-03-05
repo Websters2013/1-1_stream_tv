@@ -24,10 +24,13 @@
 
     &__video {
       width: 70%;
+      height: 60vh;
+      min-height: 300px;
     }
 
     .chat {
       width: 30%;
+      margin: 0;
     }
   }
 }
