@@ -353,6 +353,7 @@ videos.each do |video|
                   url: video[ :url ],
                   time_start: DateTime.strptime("#{t1}",'%s'),
                   time_end: DateTime.strptime("#{t2}",'%s'),
+                  channel: 'one_plus_one',
                   thumbnail: video[ :preview ]
                 } )
 
