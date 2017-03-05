@@ -1,7 +1,7 @@
 .user-panel {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 15px;
   bottom: 0;
   display: flex;
   align-items: center;
@@ -12,6 +12,7 @@
   }
 
   &__avatar {
+    overflow: hidden;
     position: relative;
     width: 40px;
     height: 40px;
@@ -36,19 +37,28 @@
   }
 
   &__settings {
-    position: relative;
-    height: 50px;
+    overflow: hidden;
+    @include absoluteCenter();
+    width: 40px;
+    height: 40px;
+    opacity: 0;
+    border-radius: 50%;
+    transition: opacity .15s ease-in-out;
+    background: rgba(0,0,0,.8);
+    box-shadow: 0 0 10px rgba(0,0,0,.8);
+
+    &:hover { opacity: 1 }
   }
 
   &__settings-menu {
 
     a {
       display: block;
-      width: 55px;
 
       > i {
         display: block;
-        height: 50px;
+        width: 40px;
+        height: 40px;
       }
     }
   }
@@ -99,18 +109,27 @@
 @media (min-width: $tablet-portrait) {
 
   .user-panel {
+    right: 30px;
 
     &__settings {
-      position: relative;
-      height: 80px;
+      width: 60px;
+      height: 60px;
     }
+
     &__settings-menu {
 
+      a {
+
+        > i {
+          width: 60px;
+          height: 60px;
+        }
+      }
     }
 
     &__avatar {
-      width: 61px;
-      height: 61px;
+      width: 60px;
+      height: 60px;
     }
   }
 }
