@@ -9,19 +9,19 @@
     <div class="trends__wrap">
 
         <!-- trends__item -->
-        <div class="trends__item" *ngFor="let item of data[ 'trends' ]">
+        <a href="#" class="trends__item" *ngFor="let item of data[ 'trends' ]">
 
             <!-- trends__thumbnail -->
-            <a class="trends__thumbnail" [ngClass]=className>
+            <div class="trends__thumbnail" [ngClass]=className>
                 <img src="{{ 'http://localhost:3000/app/thumbnails/' + item[ 'thumbnail' ] }}" alt="">
-            </a>
+            </div>
             <!-- /trends__thumbnail -->
 
             <!-- trends__description -->
             <div class="trends__description">
 
                 <!-- trends__description-title -->
-                <a class="trends__description-title">{{ item[ 'name' ] }}</a>
+                <strong class="trends__description-title">{{ item[ 'name' ] }}</strong>
                 <!-- /trends__description-title -->
 
                 <!-- trends__friends -->
@@ -34,7 +34,7 @@
             </div>
             <!-- /trends__description -->
 
-        </div>
+        </a>
         <!-- /trends__item -->
 
     </div>

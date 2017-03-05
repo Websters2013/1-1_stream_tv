@@ -28,6 +28,10 @@
 				-webkit-transition: all $animation-time ease-in-out;
 				transition: all $animation-time ease-in-out;
 			}
+
+			&.users_programms {
+				height: 61px;
+			}
 		}
 		&:last-child {
 			margin-bottom: 0;
