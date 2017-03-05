@@ -13,6 +13,7 @@ import {Subscription} from "rxjs";
 export class TrendsComponent extends SynchronizeComponent implements OnDestroy, OnInit{
 
     public className: string;
+    public title:string;
     private trendsSubscribed:boolean = false;
     private trendsDataSubscription: Subscription;
     private trendsSubscription: Subscription;
@@ -25,12 +26,24 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
         super( dataBindingService );
 
+        if( router.url.indexOf( 'new' ) >= 0 ) {
+            this.title = 'Новинки';
+        }
+        if( router.url.indexOf( 'popular' ) >= 0 ) {
+            this.title = 'Популярное';
+        }
+        if( router.url.indexOf( 'friends' ) >= 0 ) {
+            this.title = 'Друзья просмотрели';
+        }
+
     }
 
     public ngOnDestroy():void {
         this.unsubscribeData();
+        this.unsubscribeTrandsChanel();
+        delete this.data[ 'trends' ];
+        this.data[ 'changed' ] = true;
 
-        console.log(200);
     }
 
     public ngOnInit():void {
@@ -38,15 +51,17 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
 
         this.subscribeTrandsChanel();
 
+        this.trendsChannelService.start();
+
     }
 
     private subscribeTrandsChanel():void{
-        let self = this;
 
         this.trendsDataSubscription = this.trendsChannelService.observableData.subscribe( ( data:Object ) => {
 
             this.data[ 'trends' ] = data[ 'response' ];
 
+            this.data[ 'changed' ] = true;
         } );
 
         this.trendsSubscription = this.trendsChannelService.subscribed.subscribe( ( data:boolean ) => {
@@ -78,6 +93,9 @@ export class TrendsComponent extends SynchronizeComponent implements OnDestroy, 
             this.trendsSubscription.unsubscribe();
 
         }
+
+        this.trendsChannelService.unsubscribe();
+        this.trendsSubscribed = false;
 
     }
 

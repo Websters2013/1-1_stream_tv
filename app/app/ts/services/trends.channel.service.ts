@@ -15,7 +15,6 @@ export class TrendsChannelService extends ChannelWebsocketService {
             token: window.localStorage.getItem( 'auth_token' )
         };
 
-        this.start();
 
     }
 

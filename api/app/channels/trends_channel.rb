@@ -22,11 +22,33 @@ class TrendsChannel < ApplicationCable::Channel
 
   def friends
 
+    video_ids = []
 
+    friends = current_user.friends
+
+    friends.each do |friend|
+      video_ids += friend.videos.pluck( :id )
+    end
+
+    videos = Video.where( id: video_ids ).order( time_end: :desc )
+
+    ActionCable.server.broadcast "trends_#{ current_user.id }", {
+        message_type: 'friends',
+        response: Video.serialize_all( videos )
+    }
 
   end
 
   def popular
+
+    videos = Video.all.order( time_end: :desc )
+
+    videos.sort { |a,b| a.users.length <=> b.users.length }
+
+    ActionCable.server.broadcast "trends_#{ current_user.id }", {
+        message_type: 'popular',
+        response: Video.serialize_all( videos )
+    }
 
   end
 

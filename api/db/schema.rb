@@ -88,6 +88,8 @@ ActiveRecord::Schema.define(version: 20170304202206) do
     t.datetime "time_start"
     t.datetime "time_end"
     t.string   "url"
+    t.string   "thumbnail"
+    t.string   "channel"
   end
 
 end
