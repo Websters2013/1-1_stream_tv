@@ -7,8 +7,8 @@ export class WebSocketService {
 
     private ws: any;
 
-    // private domain:string = 'dashboard.api.dev.websters.com.ua';
-    private domain:string = 'localhost:3000';
+    private domain:string = 'hackathon.websters.com.ua';
+    // private domain:string = 'localhost:3000';
 
     private socket: WebSocketSubject<MessageEvent>;
 

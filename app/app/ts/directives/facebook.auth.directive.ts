@@ -2,7 +2,7 @@ import { Directive, ElementRef } from '@angular/core';
 
 const AUTH: Object = {
     client_id: '1761579497412011',
-    redirect_uri: 'http://localhost:3010/auth?type=facebook',
+    redirect_uri: 'http://hackathon-app.websters.com.ua/auth?type=facebook',
     response_type: 'code',
     scope: 'email,user_friends,public_profile'
 };
