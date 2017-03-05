@@ -13,7 +13,7 @@
                 <div class="chat__pic"><img width="50" height="50" alt="" src="{{ message[ 'user' ][ 'image' ] }}"></div>
                 <div class="chat__wrap">
                     <div class="chat__head">
-                        <strong class="chat__user">User Nmae</strong>
+                        <strong class="chat__user">{{ message[ 'user' ][ 'first_name' ] }}</strong>
                         <time attr.datetime="{{1488648771 | time: true}}">{{message[ 'created_at' ] | time: false}}</time>
                     </div>
                     {{message[ 'text' ]}}

@@ -328,7 +328,7 @@ videos = [
      }
 ]
 
-time = 1488492000 + 86400
+time = 1488492000 + 86400 + 86400
 
 videos.each do |video|
 

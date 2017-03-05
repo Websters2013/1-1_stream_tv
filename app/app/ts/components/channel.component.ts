@@ -28,7 +28,6 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
     constructor( protected dataBindingService:DataBindingService,
                  private router:Router,
                  private videoChannelService:VideoChannelService,
-                 private sanitizer: DomSanitizer,
                 private chatChannelService:ChatChannelService){
 
         super( dataBindingService );

@@ -104,13 +104,14 @@ class AuthChannel < ApplicationCable::Channel
 
     graph = Koala::Facebook::API.new( token )
 
-    user_data = graph.get_object( :me, { fields: [ :email ] } )
+    user_data = graph.get_object( :me, { fields: [ :email, :name ] } )
+
 
     friends = graph.get_connections('me', 'friends')
 
     user = User.find_by( email: user_data[ 'email' ] )
 
-    user = User.create( email: user_data[ 'email' ] ) unless user
+    user = User.create( email: user_data[ 'email' ], first_name:user_data['name'] ) unless user
 
     user.update( facebook_id: user_data[ 'id' ], image: "http://graph.facebook.com/#{ user_data[ 'id' ] }/picture?type=normal" )
 
