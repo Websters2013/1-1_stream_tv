@@ -11,4 +11,3 @@ api/log/*
 api/tmp/*
 !api/log/.keep
 !api/tmp/.keep
-api/public/*
