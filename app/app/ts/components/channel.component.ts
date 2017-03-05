@@ -6,7 +6,7 @@ import {DataBindingService} from "../services/data.binding.service";
 import {Router} from "@angular/router";
 import {ChatChannelService} from "../services/chat.channel.service";
 import {DomSanitizer} from "@angular/platform-browser";
-
+declare let Ps:any;
 @Component({
     selector: 'channel',
     templateUrl: 'app/templates/channel.component.html',
@@ -74,7 +74,11 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
 
         this.subscribeVideoChannel();
 
+        let self = this;
 
+        setTimeout( function () {
+            self.scrollDown();
+        }, 1500 )
 
     }
 
@@ -106,6 +110,12 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
 
             if( data[ 'message_type' ] == 'new' ){
                 this.messages.push( data[ 'response' ] )
+
+                let self = this;
+
+                setTimeout( function () {
+                    self.scrollDown();
+                }, 50 )
             }
 
         } );
@@ -114,6 +124,15 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
             this.chatSubscribed = data;
 
         } );
+    }
+
+    public scrollDown(){
+        let container = document.getElementById( 'chat-list' );
+
+        if ( container ) {
+            container.scrollTop = 10000;
+            Ps.update(container);
+        }
     }
 
     public unsubscribeChatChannel(){

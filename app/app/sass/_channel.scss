@@ -9,6 +9,10 @@
 
   .chat {
     width: 100%;
+
+    &__list {
+      height: calc(100% - 80px);
+    }
   }
 }
 
@@ -20,28 +24,40 @@
 @media (min-width: $tablet-portrait) {
   .channel {
 
+    &__video {
+      height: calc(50vh - 50px);
+    }
+    .chat {
+      height: calc(50vh - 80px);
+      min-height: 0;
+    }
   }
 }
 @media (min-width: $tablet-landscape) {
   .channel {
-
-  }
-}
-@media (min-width: $desktop) {
-  .channel {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
 
     &__video {
-      width: 70%;
-      height: 60vh;
-      min-height: 300px;
+      width: calc(70% - 15px);
+      height: calc(100vh - 110px);
     }
 
     .chat {
       width: 30%;
+      height: calc(100vh - 110px);
       margin: 0;
+
+      &__list {
+        height: calc(100vh - 190px);
+      }
     }
+  }
+}
+@media (min-width: $desktop) {
+  .channel {
+
   }
 }
 /*---------- /channel ---------*/

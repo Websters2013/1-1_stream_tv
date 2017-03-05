@@ -1,4 +1,4 @@
-<div class="channel">
+<div class="channel" perfectScroll>
 
     <iframe class="channel__video" *ngIf="data[ 'video' ]" width="560" height="315" [src]="data[ 'video' ][ 'url' ] | safe" frameborder="0" allowfullscreen></iframe>
 
@@ -6,7 +6,7 @@
     <div class="chat">
 
         <!-- chat__list -->
-        <div class="chat__list" perfectScroll>
+        <div class="chat__list" id="chat-list" perfectScroll>
 
             <!-- chat__item -->
             <div class="chat__item" *ngFor="let message of messages">
