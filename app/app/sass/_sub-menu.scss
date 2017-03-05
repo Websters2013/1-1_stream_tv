@@ -28,6 +28,10 @@
 				-webkit-transition: all $animation-time ease-in-out;
 				transition: all $animation-time ease-in-out;
 			}
+
+			&.users_programms {
+				height: 61px;
+			}
 		}
 		&:last-child {
 			margin-bottom: 0;
@@ -45,8 +49,20 @@
 			-webkit-transition: transform $animation-time ease-in-out;
 			transition: transform $animation-time ease-in-out;
 		}
-		&:hover,
+		&:hover {
+			color: $main-white-color;
+
+			svg {
+
+				path,
+				line,
+				circle {
+					fill: $main-white-color;
+				}
+			}
+		}
 		&.active {
+			cursor: default;
 			color: $main-white-color;
 
 			&:before {
@@ -61,9 +77,6 @@
 					fill: $main-white-color;
 				}
 			}
-		}
-		&.active {
-			cursor: default;
 		}
 	}
 }

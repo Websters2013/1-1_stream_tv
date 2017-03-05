@@ -9,7 +9,7 @@
     <div class="trends__wrap">
 
         <!-- trends__item -->
-        <div class="trends__item" *ngFor="let item of data[ 'trends' ]">
+        <a href="#" class="trends__item" *ngFor="let item of data[ 'trends' ]">
 
             <!-- trends__thumbnail -->
             <a class="trends__thumbnail" [ngClass]=className>
@@ -21,7 +21,7 @@
             <div class="trends__description">
 
                 <!-- trends__description-title -->
-                <a class="trends__description-title">{{ item[ 'name' ] }}</a>
+                <strong class="trends__description-title">{{ item[ 'name' ] }}</strong>
                 <!-- /trends__description-title -->
 
                 <!-- trends__friends -->
@@ -34,7 +34,7 @@
             </div>
             <!-- /trends__description -->
 
-        </div>
+        </a>
         <!-- /trends__item -->
 
     </div>
@@ -90,7 +90,7 @@
 
         <!-- chat__add -->
         <form action="#" class="chat__add">
-            <textarea placeholder="Добавить комментарий"></textarea>
+            <textarea name="chat-text" placeholder="Добавить комментарий"></textarea>
             <button type="submit"></button>
         </form>
         <!-- /chat__add -->

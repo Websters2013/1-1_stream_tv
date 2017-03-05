@@ -21,6 +21,11 @@
     width: 300px;
     padding: 0 15px;
     margin-bottom: 30px;
+
+    &:hover {
+      .trends__thumbnail { box-shadow: 0 0 10px rgba(0,0,0,.8) }
+      .trends__description-title { color: $main-red-color-1 }
+    }
   }
 
   &__thumbnail {
@@ -33,8 +38,6 @@
     background-position: center;
     background-repeat: no-repeat;
     transition: box-shadow .15s ease-in-out;
-
-    &:hover { box-shadow: 0 0 10px rgba(0,0,0,.8) }
   }
 
   &__description {
@@ -49,8 +52,7 @@
       color: #585d6b;
       font-size: 20px;
       line-height: 24px;
-
-      &:hover { text-decoration: underline }
+      transition: color .15s ease-in-out;
     }
 
     p {
