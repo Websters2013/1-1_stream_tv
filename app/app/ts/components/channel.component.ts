@@ -5,6 +5,7 @@ import {SynchronizeComponent} from "./synchronize.component";
 import {DataBindingService} from "../services/data.binding.service";
 import {Router} from "@angular/router";
 import {ChatChannelService} from "../services/chat.channel.service";
+import {DomSanitizer} from "@angular/platform-browser";
 
 @Component({
     selector: 'channel',
@@ -27,6 +28,7 @@ export class ChannelComponent extends  SynchronizeComponent implements OnDestroy
     constructor( protected dataBindingService:DataBindingService,
                  private router:Router,
                  private videoChannelService:VideoChannelService,
+                 private sanitizer: DomSanitizer,
                 private chatChannelService:ChatChannelService){
 
         super( dataBindingService );
