@@ -12,7 +12,9 @@
         <div class="trends__item" *ngFor="let item of data[ 'trends' ]">
 
             <!-- trends__thumbnail -->
-            <a class="trends__thumbnail" [ngClass]=className style="background-image: url(app/pic/new1.jpg)"></a>
+            <a class="trends__thumbnail" [ngClass]=className>
+                <img src="{{ 'http://localhost:3000/app/thumbnails/' + item[ 'thumbnail' ] }}" alt="">
+            </a>
             <!-- /trends__thumbnail -->
 
             <!-- trends__description -->
