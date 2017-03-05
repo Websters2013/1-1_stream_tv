@@ -1,6 +1,6 @@
 <div class="channel" perfectScroll>
 
-    <iframe class="channel__video" *ngIf="data[ 'video' ]" width="560" height="315" [src]="data[ 'video' ][ 'url' ] | safe" frameborder="0" allowfullscreen></iframe>
+    <iframe class="channel__video" *ngIf="data[ 'video' ]" width="560" height="315" [src]="data[ 'video' ][ 'url' ] | safe: data[ 'video' ][ 'time_start' ]" frameborder="0" allowfullscreen></iframe>
 
     <!-- chat -->
     <div class="chat">
@@ -40,6 +40,4 @@
     </div>
     <!-- /chat -->
 
-
-    
 </div>
